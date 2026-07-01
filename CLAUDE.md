@@ -24,6 +24,8 @@ Règles de travail détaillées dans `AGENTS.md`.
 | `css/slides/s04-si.css` | Slides 16–19 — section SI, infrastructure IT, sécurité des données, accompagnement DSIO &amp; DRCI |
 | `css/slides/s05-equipe.css` | Slide 20 — équipe et prochaines étapes |
 | `js/app.js` | Navigation (clavier, tactile, boutons), barre de progression, compteur, pastilles de section actives, menu burger mobile, synchro `postMessage` avec `presenter.html` |
+| `js/charts.js` | Initialisation des 3 graphiques Chart.js (donut ancestral slide 3, radar S_div slide 9, comparatif budgétaire slide 15) |
+| `js/vendor/chart.umd.js` | Chart.js 4.4.6 vendorisé (build UMD, récupéré via `npm pack`, pas de CDN) |
 | `assets/logo.svg` / `assets/logo-white.svg` | Logo Génome Réunion (variante navy pour fonds clairs / variante blanche pour fonds navy·teal) |
 | `assets/favicon.svg` | Favicon |
 | `AGENTS.md` | Règles de travail (contenu, CSS, commits, conventions de nommage) |
@@ -38,19 +40,19 @@ Règles de travail détaillées dans `AGENTS.md`.
 | 0 | Couverture | — | `slide--navy` | Titre, équipe porteuse, version |
 | 1 | Sommaire | — | `slide--white` | 3 blocs numérotés, plages de slides |
 | 2 | Contexte scientifique | 1 · Contexte | `slide--white` | Sous-représentation génomique, 96 % / 1,1 % |
-| 3 | La singularité réunionnaise | 1 · Contexte | `slide--white` | Admixture multicontinentale + effet fondateur, barres ancestrales |
+| 3 | La singularité réunionnaise | 1 · Contexte | `slide--white` | Admixture multicontinentale + effet fondateur, **donut Chart.js** `#ancestryChart` |
 | 4 | Impact clinique VUS | 1 · Contexte | `slide--cream` | Comparatif patient Européen vs Réunionnais |
 | 5 | Risques pharmaceutiques | 1 · Contexte | `slide--white` | CYP2C9 / CYP2C19 / CYP2D6, sur/sous-dosage |
 | 6 | Biais IA médicaments | 1 · Contexte | `slide--cream` | Chaîne de propagation du biais + 4 dérives |
 | 7 | Objectifs du projet | 1 · Contexte | `slide--navy` | 4 chiffres clés (2 500 / 350 / 100 / 36 mois) |
 | 8 | Pipeline méthodologique | 1 · Contexte | `slide--white` | 3 blocs fléchés : cohorte SNP → familles → WGS |
-| 9 | Algorithme S_div | 1 · Contexte | `slide--cream` | Formule + 4 composantes pondérées |
+| 9 | Algorithme S_div | 1 · Contexte | `slide--cream` | Formule + 4 composantes pondérées + **radar Chart.js** `#sdivRadarChart` |
 | 10 | Calendrier 7 phases | 1 · Contexte | `slide--white` | Timeline + 7 cartes de phase + jalons |
 | 11 | Modules IA | 1 · Contexte | `slide--white` | Grid 2×2 des 4 modules cliniques |
 | 12 | [Section] Budget | 2 · Budget | `slide--navy` | Slide intercalaire, 2 scénarios chiffrés |
 | 13 | Postes de dépenses | 2 · Budget | `slide--white` | Barres horizontales, total 1 709 000 € |
 | 14 | 3 décisions structurantes | 2 · Budget | `slide--cream` | Génotypage / infrastructure / RH |
-| 15 | Scénarios et financements | 2 · Budget | `slide--white` | Optimal vs Maximal + 4 sources de financement |
+| 15 | Scénarios et financements | 2 · Budget | `slide--white` | Optimal vs Maximal, **barres groupées Chart.js** `#scenarioChart` + 4 sources de financement |
 | 16 | [Section] Systèmes d'information | 3 · SI | `slide--teal` | Slide intercalaire |
 | 17 | Infrastructure IT | 3 · SI | `slide--white` | Calcul &amp; stockage / réseau &amp; logiciels |
 | 18 | Sécurité des données | 3 · SI | `slide--cream` | 3 piliers : hébergement, sécurité, gouvernance |
@@ -99,6 +101,20 @@ programmatique (utilisé potentiellement par `presenter.html` si l'accès direct
 - Chronomètre conférencier démarré au premier changement de slide, réinitialisable.
 - Séparateur notes/aperçu redimensionnable, ratio persisté dans `localStorage`
   (`genome-reunion-presenter-ratio`).
+
+## Graphiques Chart.js
+
+| Canvas | Slide | Type | Données |
+|---|---|---|---|
+| `#ancestryChart` | 3 — La singularité réunionnaise | donut | Composition ancestrale illustrative (45/25/15/8/7 %) |
+| `#sdivRadarChart` | 9 — Algorithme S_div | radar | Pondération des 4 composantes (0,30/0,30/0,25/0,15) |
+| `#scenarioChart` | 15 — Scénarios et financements | barres groupées | Génotypage / Infrastructure IT / RH — Optimal vs Maximal |
+
+`js/charts.js` initialise les 3 graphiques une seule fois au chargement de `index.html` : les slides inactives
+restent dans le flux (`opacity`/`visibility`, jamais `display:none`), donc chaque `<canvas>` a déjà une taille
+exploitable dès `DOMContentLoaded`, sans attendre l'activation de sa slide. Aucune donnée n'est dupliquée par
+rapport aux slides textuelles (12, 13) — les graphiques resynthétisent des chiffres déjà présentés ailleurs
+dans le deck.
 
 ## Conventions de nommage CSS
 

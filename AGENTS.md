@@ -41,6 +41,15 @@ lisibilité de `index.html`, et la cohérence visuelle entre les slides.
   `budget-*`, `decision-*`, `funding-*` (budget), `infra-*`, `security-*`,
   `support-*` (systèmes d'information).
 
+## JavaScript et bibliothèques tierces
+
+- Zéro CDN à l'exécution : toute bibliothèque tierce (ex. Chart.js) doit être vendorisée dans `js/vendor/`
+  plutôt que chargée depuis un CDN.
+- Ne pas ajouter de graphique (Chart.js ou autre) qui duplique une information déjà exhaustivement détaillée
+  ailleurs dans le deck sans raison — préférer resynthétiser des données existantes plutôt qu'en introduire
+  de nouvelles.
+- Documenter tout nouveau canvas/graphique dans `CLAUDE.md` (section « Graphiques Chart.js »).
+
 ## Contenu des slides
 
 - Ne pas modifier le fond scientifique, budgétaire ou organisationnel sans

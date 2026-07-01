@@ -196,32 +196,17 @@
         </div>
         <div class="slide-col">
           <h2 class="block-title">Composition ancestrale illustrative</h2>
-          <div class="ancestry-bars">
-            <div class="ancestry-row">
-              <span class="ancestry-label">Afrique / Malgache</span>
-              <div class="ancestry-track"><div class="ancestry-fill" style="width:45%;background:var(--teal);"></div></div>
-              <span class="ancestry-pct" style="color:var(--teal);">45%</span>
+          <div class="ancestry-chart-row">
+            <div class="ancestry-chart-wrap">
+              <canvas id="ancestryChart" role="img" aria-label="Répartition ancestrale illustrative : Afrique et Madagascar 45 %, Inde du Sud 25 %, Européen 15 %, Zarabe et Gujarati 8 %, Chinois et Asie 7 %"></canvas>
             </div>
-            <div class="ancestry-row">
-              <span class="ancestry-label">Inde du Sud</span>
-              <div class="ancestry-track"><div class="ancestry-fill" style="width:25%;background:var(--coral);"></div></div>
-              <span class="ancestry-pct" style="color:var(--coral);">25%</span>
-            </div>
-            <div class="ancestry-row">
-              <span class="ancestry-label">Européen</span>
-              <div class="ancestry-track"><div class="ancestry-fill" style="width:15%;background:var(--navy);"></div></div>
-              <span class="ancestry-pct" style="color:var(--navy);">15%</span>
-            </div>
-            <div class="ancestry-row">
-              <span class="ancestry-label">Zarabe / Gujarati</span>
-              <div class="ancestry-track"><div class="ancestry-fill" style="width:8%;background:oklch(0.55 0.12 200);"></div></div>
-              <span class="ancestry-pct" style="color:oklch(0.50 0.12 200);">8%</span>
-            </div>
-            <div class="ancestry-row">
-              <span class="ancestry-label">Chinois / Asie</span>
-              <div class="ancestry-track"><div class="ancestry-fill" style="width:7%;background:oklch(0.50 0.10 150);"></div></div>
-              <span class="ancestry-pct" style="color:oklch(0.50 0.10 150);">7%</span>
-            </div>
+            <ul class="ancestry-legend">
+              <li><span class="legend-dot" style="background:var(--teal);"></span>Afrique / Malgache<strong>45%</strong></li>
+              <li><span class="legend-dot" style="background:var(--coral);"></span>Inde du Sud<strong>25%</strong></li>
+              <li><span class="legend-dot" style="background:var(--navy);"></span>Européen<strong>15%</strong></li>
+              <li><span class="legend-dot" style="background:oklch(0.55 0.12 200);"></span>Zarabe / Gujarati<strong>8%</strong></li>
+              <li><span class="legend-dot" style="background:oklch(0.50 0.10 150);"></span>Chinois / Asie<strong>7%</strong></li>
+            </ul>
           </div>
           <p class="text-small text-italic">Valeurs illustratives · à valider sur la cohorte</p>
         </div>
@@ -472,30 +457,35 @@
           <span style="color:oklch(0.78 0.12 80);">0,15</span> × <span style="color:oklch(0.80 0.10 60);">ROH_score</span>
         </p>
       </div>
-      <div class="algo-component-grid">
-        <div class="algo-component-card">
-          <div class="algo-component-pct" style="color:#7AB5CC;">30%</div>
-          <div class="algo-component-name">PCA_score</div>
-          <div class="algo-component-tag">Position génétique</div>
-          <p class="algo-component-desc">Distance au centroïde dans l'espace ancré sur les pools témoins 1000G + EGA. Capture la marginalité génétique du secteur.</p>
+      <div class="slide-cols slide-cols--stretch">
+        <div class="algo-component-grid algo-component-grid--2x2">
+          <div class="algo-component-card">
+            <div class="algo-component-pct" style="color:#7AB5CC;">30%</div>
+            <div class="algo-component-name">PCA_score</div>
+            <div class="algo-component-tag">Position génétique</div>
+            <p class="algo-component-desc">Distance au centroïde dans l'espace ancré sur les pools témoins 1000G + EGA. Capture la marginalité génétique du secteur.</p>
+          </div>
+          <div class="algo-component-card">
+            <div class="algo-component-pct" style="color:var(--coral);">30%</div>
+            <div class="algo-component-name">ADMIX_score</div>
+            <div class="algo-component-tag">Composition ancestrale</div>
+            <p class="algo-component-desc">Entropie de Shannon des proportions ancestrales issues d'ADMIXTURE supervisée. Diversité ancestrale individuelle.</p>
+          </div>
+          <div class="algo-component-card">
+            <div class="algo-component-pct" style="color:oklch(0.50 0.15 160);">25%</div>
+            <div class="algo-component-name">IBD_score</div>
+            <div class="algo-component-tag">Indépendance génétique</div>
+            <p class="algo-component-desc">1 − max parenté KING. Évite la redondance. Contrainte dure : kinship ≥ 0,0625 = exclusion du panel.</p>
+          </div>
+          <div class="algo-component-card">
+            <div class="algo-component-pct" style="color:oklch(0.55 0.12 60);">15%</div>
+            <div class="algo-component-name">ROH_score</div>
+            <div class="algo-component-tag">Signature fondatrice</div>
+            <p class="algo-component-desc">max(0, 1 − ROH_total/100 Mb). Pénalise l'excès d'autozygotie — consanguinité ou effet fondateur fort.</p>
+          </div>
         </div>
-        <div class="algo-component-card">
-          <div class="algo-component-pct" style="color:var(--coral);">30%</div>
-          <div class="algo-component-name">ADMIX_score</div>
-          <div class="algo-component-tag">Composition ancestrale</div>
-          <p class="algo-component-desc">Entropie de Shannon des proportions ancestrales issues d'ADMIXTURE supervisée. Diversité ancestrale individuelle.</p>
-        </div>
-        <div class="algo-component-card">
-          <div class="algo-component-pct" style="color:oklch(0.50 0.15 160);">25%</div>
-          <div class="algo-component-name">IBD_score</div>
-          <div class="algo-component-tag">Indépendance génétique</div>
-          <p class="algo-component-desc">1 − max parenté KING. Évite la redondance. Contrainte dure : kinship ≥ 0,0625 = exclusion du panel.</p>
-        </div>
-        <div class="algo-component-card">
-          <div class="algo-component-pct" style="color:oklch(0.55 0.12 60);">15%</div>
-          <div class="algo-component-name">ROH_score</div>
-          <div class="algo-component-tag">Signature fondatrice</div>
-          <p class="algo-component-desc">max(0, 1 − ROH_total/100 Mb). Pénalise l'excès d'autozygotie — consanguinité ou effet fondateur fort.</p>
+        <div class="algo-radar-wrap">
+          <canvas id="sdivRadarChart" role="img" aria-label="Radar des pondérations de l'algorithme S_div : PCA 30 %, ADMIX 30 %, IBD 25 %, ROH 15 %"></canvas>
         </div>
       </div>
       <p class="slide-note">Robustesse : 100+ ordres aléatoires de secteurs · cible de stabilité &gt; 95 % · poids analysés par sensibilité ±10 %</p>
@@ -675,23 +665,18 @@
       <div class="slide-header"><span class="slide-eyebrow">Budget</span><h1 class="slide-title">Scénarios et financements</h1></div>
       <div class="slide-cols slide-cols--stretch">
         <div class="scenario-col">
-          <div class="scenario-card scenario-card--light">
-            <div class="scenario-label">Scénario Optimal</div>
-            <div class="scenario-total">~1 403 000 €</div>
-            <div class="scenario-lines">
-              <div class="scenario-line"><span>Génotypage sous-traitance</span><strong>265 K€</strong></div>
-              <div class="scenario-line"><span>Cloud hybride HDS</span><strong>270 K€</strong></div>
-              <div class="scenario-line"><span>Prop. RH 2</span><strong>524 K€</strong></div>
+          <div class="scenario-totals">
+            <div class="scenario-total-mini">
+              <div class="scenario-label">Scénario Optimal</div>
+              <div class="scenario-total scenario-total--mini">~1 403 000 €</div>
+            </div>
+            <div class="scenario-total-mini scenario-total-mini--dark">
+              <div class="scenario-label">Scénario Maximal</div>
+              <div class="scenario-total scenario-total--mini" style="color:var(--coral);">~1 709 000 €</div>
             </div>
           </div>
-          <div class="scenario-card scenario-card--dark">
-            <div class="scenario-label">Scénario Maximal</div>
-            <div class="scenario-total">~1 709 000 €</div>
-            <div class="scenario-lines">
-              <div class="scenario-line"><span>iScan Illumina + qualification</span><strong>479 K€</strong></div>
-              <div class="scenario-line"><span>On-premise CAPEX</span><strong>334 K€</strong></div>
-              <div class="scenario-line"><span>Prop. RH 2</span><strong>524 K€</strong></div>
-            </div>
+          <div class="scenario-chart-wrap">
+            <canvas id="scenarioChart" role="img" aria-label="Comparaison des 3 décisions structurantes entre le scénario Optimal et le scénario Maximal : génotypage 265 K€ contre 479 K€, infrastructure IT 270 K€ contre 334 K€, ressources humaines 524 K€ dans les deux scénarios"></canvas>
           </div>
         </div>
         <div class="funding-col">
@@ -873,6 +858,8 @@
 </div>
 </div>
 
+<script src="js/vendor/chart.umd.js"></script>
+<script src="js/charts.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
