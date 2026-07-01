@@ -1,6 +1,7 @@
 /* charts.js — Génome Réunion · Réunion DRCI/DSIO
    Graphiques Chart.js (vendorisé, pas de CDN) : donut ancestral (slide 3),
-   radar des pondérations S_div (slide 9), comparatif budgétaire (slide 15).
+   radar des pondérations S_div (slide 9), Gantt du calendrier (slide 10),
+   comparatif budgétaire (slide 15).
    Les slides inactives restent dans le flux (opacity/visibility, pas de
    display:none) : les canvas ont donc une taille dès le chargement et les
    graphiques peuvent être initialisés une seule fois, sans attendre
@@ -84,6 +85,62 @@
           }
         }
       }
+    });
+  }
+
+  var ganttCanvas = document.getElementById('calendarGanttChart');
+  if (ganttCanvas) {
+    var phases = [
+      { label: ['Phase 0', 'Panels témoins'], range: [1, 3], color: NAVY },
+      { label: ['Phase 1', 'Validation externe'], range: [1, 5], color: NAVY },
+      { label: ['Phase 2', 'Cohorte SNP'], range: [4, 9], color: TEAL },
+      { label: ['Phase 3', 'Module familial'], range: [4, 14], color: TEAL },
+      { label: ['Phase 4', 'WGS POPgen'], range: [8, 22], color: CORAL },
+      { label: ['Phase 5', 'Modules IA'], range: [17, 30], color: CORAL },
+      { label: ['Phase 6', 'Portail clinique'], range: [27, 36], color: CORAL }
+    ];
+    var ganttRangeLabels = {
+      id: 'ganttRangeLabels',
+      afterDatasetsDraw: function (chart) {
+        var ctx = chart.ctx;
+        var meta = chart.getDatasetMeta(0);
+        ctx.save();
+        ctx.font = "600 12px 'DM Sans', sans-serif";
+        ctx.fillStyle = '#2A3A48';
+        ctx.textBaseline = 'middle';
+        ctx.textAlign = 'left';
+        meta.data.forEach(function (bar, i) {
+          var r = phases[i].range;
+          ctx.fillText('M' + r[0] + '–M' + r[1], bar.x + 8, bar.y);
+        });
+        ctx.restore();
+      }
+    };
+    new Chart(ganttCanvas, {
+      type: 'bar',
+      data: {
+        labels: phases.map(function (p) { return p.label; }),
+        datasets: [{
+          data: phases.map(function (p) { return p.range; }),
+          backgroundColor: phases.map(function (p) { return p.color; }),
+          borderRadius: 5,
+          barThickness: 24
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: function (ctx) { return 'M' + ctx.raw[0] + ' – M' + ctx.raw[1]; } } }
+        },
+        scales: {
+          x: { min: 0, max: 40, title: { display: true, text: 'Mois' }, grid: { color: BORDER } },
+          y: { grid: { display: false }, ticks: { font: { family: "'Space Grotesk', sans-serif", size: 13 } } }
+        }
+      },
+      plugins: [ganttRangeLabels]
     });
   }
 

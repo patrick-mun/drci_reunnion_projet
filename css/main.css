@@ -464,17 +464,8 @@ h2.block-title {
 .pipeline-tags { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
 .pipeline-tag { padding: 4px 12px; border-radius: 20px; font-size: 16px; font-family: var(--font-body); background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.7); }
 
-/* Timeline (calendrier 7 phases) */
-.timeline-bar { height: 6px; background: var(--border); border-radius: 3px; position: relative; flex-shrink: 0; }
-.timeline-bar-fill { position: absolute; inset: 0; border-radius: 3px; background: linear-gradient(90deg, var(--navy) 0%, var(--teal) 50%, var(--coral) 100%); }
-.timeline-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; flex: 1; align-items: start; }
-.phase-card { background: var(--bg-light); border-radius: var(--r-sm); padding: 14px 13px; display: flex; flex-direction: column; gap: 6px; border-top: 4px solid var(--navy); height: 100%; }
-.phase-card--teal { border-top-color: var(--teal); }
-.phase-card--coral { border-top-color: var(--coral); }
-.phase-label { font-family: var(--font-title); font-size: 17px; font-weight: 700; color: var(--navy); }
-.phase-title { font-family: var(--font-title); font-size: 19px; font-weight: 700; color: var(--navy); line-height: 1.2; }
-.phase-desc { font-family: var(--font-body); font-size: 16px; color: var(--muted); line-height: 1.35; }
-.phase-when { font-family: var(--font-title); font-size: 16px; font-weight: 600; color: var(--teal); margin-top: auto; }
+/* Calendrier 7 phases — Gantt Chart.js */
+.gantt-wrap { flex: 1; position: relative; min-height: 0; }
 .milestones { display: flex; gap: 16px; flex-wrap: wrap; font-family: var(--font-body); font-size: 17px; color: var(--muted); }
 .milestones strong { color: var(--navy); }
 
@@ -515,7 +506,7 @@ h2.block-title {
   .slide-sep { display: none; }
   .slide-title { font-size: 34px; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .timeline-grid { grid-template-columns: repeat(2, 1fr); }
+  .gantt-wrap { min-height: 320px; }
   .pipeline { flex-direction: column; }
   .pipeline-arrow { display: none; }
   .pipeline-step:first-child, .pipeline-step:last-child { border-radius: 16px; }

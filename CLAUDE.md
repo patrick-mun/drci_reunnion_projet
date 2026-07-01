@@ -24,7 +24,7 @@ Règles de travail détaillées dans `AGENTS.md`.
 | `css/slides/s04-si.css` | Slides 16–19 — section SI, infrastructure IT, sécurité des données, accompagnement DSIO &amp; DRCI |
 | `css/slides/s05-equipe.css` | Slide 20 — équipe et prochaines étapes |
 | `js/app.js` | Navigation (clavier, tactile, boutons), barre de progression, compteur, pastilles de section actives, menu burger mobile, synchro `postMessage` avec `presenter.html` |
-| `js/charts.js` | Initialisation des 3 graphiques Chart.js (donut ancestral slide 3, radar S_div slide 9, comparatif budgétaire slide 15) |
+| `js/charts.js` | Initialisation des 4 graphiques Chart.js (donut ancestral slide 3, radar S_div slide 9, Gantt calendrier slide 10, comparatif budgétaire slide 15) |
 | `js/vendor/chart.umd.js` | Chart.js 4.4.6 vendorisé (build UMD, récupéré via `npm pack`, pas de CDN) |
 | `assets/logo.svg` / `assets/logo-white.svg` | Logo Génome Réunion (variante navy pour fonds clairs / variante blanche pour fonds navy·teal) |
 | `assets/favicon.svg` | Favicon |
@@ -47,7 +47,7 @@ Règles de travail détaillées dans `AGENTS.md`.
 | 7 | Objectifs du projet | 1 · Contexte | `slide--navy` | 4 chiffres clés (2 500 / 350 / 100 / 36 mois) |
 | 8 | Pipeline méthodologique | 1 · Contexte | `slide--white` | 3 blocs fléchés : cohorte SNP → familles → WGS |
 | 9 | Algorithme S_div | 1 · Contexte | `slide--cream` | Formule + 4 composantes pondérées + **radar Chart.js** `#sdivRadarChart` |
-| 10 | Calendrier 7 phases | 1 · Contexte | `slide--white` | Timeline + 7 cartes de phase + jalons |
+| 10 | Calendrier 7 phases | 1 · Contexte | `slide--white` | **Gantt Chart.js** `#calendarGanttChart` (7 phases sur 36 mois) + jalons |
 | 11 | Modules IA | 1 · Contexte | `slide--white` | Grid 2×2 des 4 modules cliniques |
 | 12 | [Section] Budget | 2 · Budget | `slide--navy` | Slide intercalaire, 2 scénarios chiffrés |
 | 13 | Postes de dépenses | 2 · Budget | `slide--white` | Barres horizontales, total 1 709 000 € |
@@ -108,9 +108,10 @@ programmatique (utilisé potentiellement par `presenter.html` si l'accès direct
 |---|---|---|---|
 | `#ancestryChart` | 3 — La singularité réunionnaise | donut | Composition ancestrale illustrative (45/25/15/8/7 %) |
 | `#sdivRadarChart` | 9 — Algorithme S_div | radar | Pondération des 4 composantes (0,30/0,30/0,25/0,15) |
+| `#calendarGanttChart` | 10 — Calendrier 7 phases | Gantt (barres flottantes horizontales) | 7 phases sur 36 mois, plugin maison `ganttRangeLabels` pour l'étiquette « M{début}–M{fin} » |
 | `#scenarioChart` | 15 — Scénarios et financements | barres groupées | Génotypage / Infrastructure IT / RH — Optimal vs Maximal |
 
-`js/charts.js` initialise les 3 graphiques une seule fois au chargement de `index.html` : les slides inactives
+`js/charts.js` initialise les 4 graphiques une seule fois au chargement de `index.html` : les slides inactives
 restent dans le flux (`opacity`/`visibility`, jamais `display:none`), donc chaque `<canvas>` a déjà une taille
 exploitable dès `DOMContentLoaded`, sans attendre l'activation de sa slide. Aucune donnée n'est dupliquée par
 rapport aux slides textuelles (12, 13) — les graphiques resynthétisent des chiffres déjà présentés ailleurs
