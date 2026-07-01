@@ -14,12 +14,13 @@
 .singularity-cards .card { flex: 1; justify-content: center; padding: 22px 26px; }
 .singularity-cards .card-kicker { margin-bottom: 8px; }
 
-.ancestry-chart-row { display: flex; align-items: center; gap: 32px; flex: 1; }
-.ancestry-chart-wrap { position: relative; width: 220px; height: 220px; flex-shrink: 0; }
-.ancestry-legend { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.ancestry-legend li { display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-size: 18px; color: var(--navy); }
-.ancestry-legend strong { margin-left: auto; padding-left: 16px; font-family: var(--font-title); font-weight: 700; }
-.legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.ancestry-card { flex: 1; display: flex; align-items: center; justify-content: center; background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px; }
+.ancestry-chart-row { display: flex; align-items: center; gap: 36px; }
+.ancestry-chart-wrap { position: relative; width: 260px; height: 260px; flex-shrink: 0; }
+.ancestry-legend { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.ancestry-legend li { display: flex; align-items: center; gap: 10px; font-family: var(--font-body); font-size: 20px; color: var(--navy); }
+.ancestry-legend strong { margin-left: auto; padding-left: 20px; font-family: var(--font-title); font-weight: 700; font-size: 20px; }
+.legend-dot { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0; }
 
 /* Impact clinique — comparatif européen / réunionnais */
 .clinical-compare { display: flex; gap: 28px; flex: 1; align-items: stretch; }
