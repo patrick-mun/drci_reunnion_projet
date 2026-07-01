@@ -1,0 +1,17 @@
+/* Slide 18 — Équipe et prochaines étapes
+   Familles de classes : team-* (main.css) / partners-* / next-* */
+
+.team-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.team-header-logo { height: 40px; flex-shrink: 0; }
+.team-kicker { font-family: var(--font-title); font-size: 17px; font-weight: 600; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 1.5px; }
+
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.team-grid .team-card--lead { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; }
+.team-grid .team-card--lead .team-avatar { margin-bottom: 0; }
+
+.partners-block { padding: 16px 20px; background: rgba(255, 255, 255, 0.06); border-radius: var(--r-md); border: 1px solid rgba(255, 255, 255, 0.08); }
+.partners-title { font-family: var(--font-title); font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.partners-row { display: flex; gap: 14px; }
+.partner-block { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+
+.next-steps-list { display: flex; flex-direction: column; gap: 10px; flex: 1; }

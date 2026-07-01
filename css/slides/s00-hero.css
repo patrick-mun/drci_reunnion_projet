@@ -1,0 +1,74 @@
+/* Slide 01 — Couverture, 01b — Sommaire */
+
+.hero-slide {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.hero-waves {
+  position: absolute;
+  right: -40px; top: 0; bottom: 0;
+  width: 480px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+.hero-accent-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--teal) 50%, var(--coral) 100%);
+}
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 110px;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+.hero-logo { height: 52px; align-self: flex-start; }
+.hero-eyebrow {
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--coral);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-family: var(--font-title);
+  font-size: 58px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.12;
+  max-width: 900px;
+}
+.hero-title em {
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.68);
+}
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.72);
+}
+.hero-team {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.42);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 22px;
+}
+.hero-team-version { margin-left: auto; }
+
+/* Sommaire */
+.toc-footer { font-family: var(--font-body); font-size: 17px; color: var(--muted); font-style: italic; }

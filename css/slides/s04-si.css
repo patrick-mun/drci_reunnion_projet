@@ -1,0 +1,34 @@
+/* Slides 14–17 — Partie 3 : Systèmes d'information & accompagnement
+   Section SI · Infrastructure IT · Sécurité des données · Accompagnement DSIO & DRCI
+   Familles de classes : infra-* / security-* / support-* */
+
+.infra-block-title { padding-bottom: 10px; border-bottom: 2px solid var(--border); margin-bottom: 4px; }
+.infra-item-list { display: flex; flex-direction: column; gap: 10px; }
+.infra-item { padding: 15px 18px; background: var(--bg-light); border-radius: var(--r-sm); border: 1px solid var(--border); display: flex; gap: 14px; }
+.infra-dot { flex-shrink: 0; width: 9px; height: 9px; border-radius: 50%; margin-top: 8px; background: var(--teal); }
+.infra-dot--coral { background: var(--coral); }
+.infra-item-title { font-family: var(--font-title); font-weight: 700; font-size: 19px; color: var(--navy); margin-bottom: 3px; }
+.infra-item p { font-family: var(--font-body); font-size: 18px; color: var(--muted); line-height: 1.35; }
+
+/* Sécurité des données — 3 piliers */
+.security-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; flex: 1; }
+.security-pillar { background: white; border-radius: var(--r-lg); padding: 26px 22px; display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--border); }
+.security-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.security-icon--navy { background: var(--navy); }
+.security-icon--teal { background: var(--teal); }
+.security-icon--coral { background: var(--coral); }
+.security-pillar h2 { font-family: var(--font-title); font-weight: 700; font-size: 25px; color: var(--navy); }
+.security-point-list { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.security-point { padding: 10px 12px; background: var(--bg-light); border-radius: var(--r-sm); }
+.security-point-title { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 3px; }
+.security-point p { font-family: var(--font-body); font-size: 16px; color: var(--muted); line-height: 1.3; }
+
+/* Accompagnement DSIO / DRCI */
+.support-block-title { text-transform: uppercase; letter-spacing: 1px; padding-bottom: 10px; border-bottom: 2px solid var(--border); font-size: 20px; }
+.support-item-list { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.support-item { padding: 14px 18px; background: var(--bg-light); border-radius: var(--r-sm); border-left: 4px solid var(--navy); }
+.support-item--teal { border-left-color: var(--teal); }
+.support-item--coral { border-left-color: var(--coral); }
+.support-item--amber { border-left-color: var(--amber); }
+.support-item-title { font-family: var(--font-title); font-weight: 700; font-size: 19px; color: var(--navy); margin-bottom: 3px; }
+.support-item p { font-family: var(--font-body); font-size: 17px; color: var(--muted); line-height: 1.3; }

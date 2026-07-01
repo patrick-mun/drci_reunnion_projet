@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+:root {
+  --navy:  #0F3A56;
+  --teal:  #1E6E8C;
+  --coral: #E8654A;
+  --bg-light: #F4F1EA;
+  --muted: #6A7178;
+  --border: #D8D2C6;
+  --type-title:  64px;
+  --type-h2:     46px;
+  --type-body:   30px;
+  --type-small:  26px;
+  --pad-x:  100px;
+  --pad-top: 84px;
+  --pad-bot: 72px;
+  --gap-title: 40px;
+  --gap-item:  20px;
+}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+<!-- ═══════════════════════════════════════════════
+     01 — COUVERTURE
+═══════════════════════════════════════════════ -->
+<section data-label="01 — Couverture" data-screen-label="01" data-speaker-notes="Présenter le projet Génome Réunion : premier référentiel génomique dédié à la population réunionnaise, porté par le CHU de La Réunion.">
+<div style="display:flex;flex-direction:column;height:100%;background:#0F3A56;position:relative;overflow:hidden;">
+  <!-- Decorative waves right -->
+  <div style="position:absolute;right:-40px;top:0;bottom:0;width:560px;opacity:0.06;pointer-events:none;">
+    <svg viewBox="0 0 560 1080" fill="none" style="width:100%;height:100%;">
+      <path d="M0,160 C93,80 186,80 280,160 C373,240 466,240 560,160" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,360 C93,280 186,280 280,360 C373,440 466,440 560,360" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,560 C93,480 186,480 280,560 C373,640 466,640 560,560" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,760 C93,680 186,680 280,760 C373,840 466,840 560,760" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,960 C93,880 186,880 280,960 C373,1040 466,1040 560,960" stroke="white" stroke-width="56" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <!-- Accent bar left -->
+  <div style="position:absolute;left:0;top:0;bottom:0;width:8px;background:linear-gradient(180deg,#0F3A56 0%,#1E6E8C 50%,#E8654A 100%);"></div>
+  <!-- Content -->
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 140px;gap:44px;position:relative;z-index:1;">
+    <!-- Logo -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 22 410 64" fill="none" style="height:68px;align-self:flex-start;flex-shrink:0;">
+      <g fill="none" stroke-width="5" stroke-linecap="round" transform="translate(18,28)">
+        <path d="M0,11 C11,1 22,1 32,11 C42,21 53,21 63,11 C71,3 79,3 84,8" stroke="rgba(255,255,255,0.55)"></path>
+        <path d="M0,11 C11,1 22,1 32,11 C42,21 53,21 63,11 C71,3 79,3 84,8" stroke="#1E6E8C" transform="translate(0,16)"></path>
+        <path d="M0,11 C11,1 22,1 32,11 C42,21 53,21 63,11 C71,3 79,3 84,8" stroke="#E8654A" transform="translate(0,32)"></path>
+        <circle cx="84" cy="8" r="2.6" fill="rgba(255,255,255,0.55)" stroke="none"></circle>
+        <circle cx="84" cy="24" r="2.6" fill="#1E6E8C" stroke="none"></circle>
+        <circle cx="84" cy="40" r="2.6" fill="#E8654A" stroke="none"></circle>
+      </g>
+      <text x="132" y="56" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="31" letter-spacing="0.2" fill="white">Génome <tspan font-weight="400">Réunion</tspan></text>
+      <text x="133" y="76" font-family="'Segoe UI',Arial,sans-serif" font-weight="600" font-size="10.5" letter-spacing="3.4" fill="rgba(255,255,255,0.45)">RÉFÉRENTIEL GÉNOMIQUE</text>
+    </svg>
+    <!-- Eyebrow -->
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#E8654A;letter-spacing:3px;text-transform:uppercase;">CHU de La Réunion · Service de Génétique</div>
+    <!-- Title -->
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:82px;font-weight:700;color:white;line-height:1.1;margin:0;max-width:980px;">
+      <span>Premier référentiel</span><br>
+      <span style="font-weight:400;color:rgba(255,255,255,0.68);">génomique de La Réunion</span>
+    </h1>
+    <!-- Subtitle -->
+    <p style="font-family:'DM Sans',sans-serif;font-size:34px;font-weight:300;color:rgba(255,255,255,0.72);margin:0;">Réunion de présentation — DRCI &amp; DSIO · CHU de La Réunion</p>
+    <!-- Team -->
+    <div style="display:flex;gap:48px;font-family:'DM Sans',sans-serif;font-size:26px;color:rgba(255,255,255,0.42);border-top:1px solid rgba(255,255,255,0.1);padding-top:28px;flex-wrap:wrap;">
+      <span>Patrick MUNIER</span>
+      <span>Dr Thomas HUBY</span>
+      <span>Susie GUILLY</span>
+      <span>Dr Fanny FERROUL</span>
+      <span style="margin-left:auto;">Version V3.5 · Juin 2026</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     01b — SOMMAIRE
+═══════════════════════════════════════════════ -->
+<section data-label="01b — Sommaire" data-screen-label="01b" data-speaker-notes="Présenter les 3 parties : contexte scientifique et méthodologie, budget et financements, systèmes d'information et accompagnement. La DSIO peut se concentrer sur les parties 2 et 3.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:72px 100px 64px;gap:32px;box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Ordre du jour</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:58px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Déroulé de la réunion</h1>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:18px;flex:1;justify-content:center;">
+
+    <!-- Partie 1 -->
+    <div style="display:flex;gap:36px;align-items:stretch;padding:28px 36px;background:var(--bg-light);border-radius:16px;border:1px solid var(--border);">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:white;">1</div>
+        <div style="width:2px;flex:1;background:var(--border);"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;padding-bottom:4px;">
+        <div style="display:flex;align-items:baseline;gap:20px;">
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Contexte &amp; démarche scientifique</h2>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--muted);flex-shrink:0;">Slides 3 → 10</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid var(--border);">Rationnel &amp; équité en santé</span>
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid var(--border);">Pharmacogénétique</span>
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid var(--border);">Biais IA</span>
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid var(--border);">Objectifs · Pipeline · Calendrier · Modules IA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partie 2 -->
+    <div style="display:flex;gap:36px;align-items:stretch;padding:28px 36px;background:oklch(0.97 0.015 30);border-radius:16px;border:1px solid oklch(0.89 0.04 30);">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--coral);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:white;">2</div>
+        <div style="width:2px;flex:1;background:oklch(0.88 0.05 30);"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;padding-bottom:4px;">
+        <div style="display:flex;align-items:baseline;gap:20px;">
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Budget &amp; financements</h2>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--muted);flex-shrink:0;">Slides 11 → 14</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid oklch(0.89 0.04 30);">Postes de dépenses</span>
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid oklch(0.89 0.04 30);">3 décisions structurantes</span>
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid oklch(0.89 0.04 30);">Scénarios · FEDER · POPgen</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partie 3 -->
+    <div style="display:flex;gap:36px;align-items:stretch;padding:28px 36px;background:oklch(0.97 0.015 200);border-radius:16px;border:1px solid oklch(0.89 0.04 200);">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:white;">3</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+        <div style="display:flex;align-items:baseline;gap:20px;">
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Systèmes d'information &amp; accompagnement</h2>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--muted);flex-shrink:0;">Slides 15 → 20</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid oklch(0.89 0.04 200);">Infrastructure · Stockage · Sécurité</span>
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid oklch(0.89 0.04 200);">Accompagnement DSIO &amp; DRCI</span>
+          <span style="padding:6px 14px;background:white;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--navy);border:1px solid oklch(0.89 0.04 200);">Équipe · Prochaines étapes</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- Footer note -->
+  <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;font-style:italic;">La partie 1 s'adresse à l'ensemble des participants · Les parties 2 &amp; 3 impliquent plus particulièrement la DRCI et la DSIO</p>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     02 — CONTEXTE SCIENTIFIQUE
+═══════════════════════════════════════════════ -->
+<section data-label="02 — Contexte" data-screen-label="02" data-speaker-notes="Les bases de données génomiques internationales sont dominées par des individus d'ascendance européenne. La population réunionnaise y est quasi absente, créant un biais clinique direct.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Contexte scientifique</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">L'angle mort de la médecine de précision</h1>
+  </div>
+  <div style="display:flex;gap:56px;flex:1;align-items:flex-start;">
+    <!-- Left -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:var(--gap-item);">
+      <p style="font-family:'DM Sans',sans-serif;font-size:var(--type-body);color:#2A3A48;line-height:1.55;margin:0;">
+        Les référentiels génomiques internationaux (gnomAD, 1000 Genomes) sont dominés par des individus d'ascendance européenne. La population réunionnaise y est <strong style="color:var(--coral);">quasi absente.</strong>
+      </p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:center;gap:20px;padding:20px 24px;background:var(--bg-light);border-left:5px solid var(--navy);border-radius:0 8px 8px 0;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--navy);flex-shrink:0;line-height:1;">96%</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:var(--muted);margin:0;line-height:1.4;">des séquences disponibles en 2009 provenaient d'ascendance <strong>européenne</strong></p>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px;padding:20px 24px;background:var(--bg-light);border-left:5px solid var(--teal);border-radius:0 8px 8px 0;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--teal);flex-shrink:0;line-height:1;">1,1%</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:var(--muted);margin:0;line-height:1.4;">de représentation africaine dans les études GWAS en 2022</p>
+        </div>
+      </div>
+    </div>
+    <!-- Right -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:14px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--navy);margin:0;">Conséquences pour les patients réunionnais</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1;">
+        <div style="padding:20px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--navy);margin-bottom:8px;">Fréquences alléliques</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">Un variant fréquent localement peut être classé « rare » dans gnomAD, et inversement</p>
+        </div>
+        <div style="padding:20px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--navy);margin-bottom:8px;">Biais des modèles IA</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">PRS, pharmacogénétique — moins précis sur les populations admixées</p>
+        </div>
+        <div style="padding:20px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--navy);margin-bottom:8px;">Pharmacogénétique</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">Allèles CYP2C9/CYP2C19 fréquents en Afrique absents des algorithmes de dosage</p>
+        </div>
+        <div style="padding:20px;background:oklch(0.96 0.02 30);border-radius:10px;border:1px solid oklch(0.88 0.05 30);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--coral);margin-bottom:8px;">Équité en santé</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">Plus de VUS reçus par les patients non-européens — errance et anxiété diagnostique</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     03 — LA SINGULARITÉ RÉUNIONNAISE
+═══════════════════════════════════════════════ -->
+<section data-label="03 — La singularité réunionnaise" data-screen-label="03" data-speaker-notes="La Réunion cumule deux singularités génétiques : admixture multicontinentale ancienne et effets fondateurs régionaux. Les outils standards sont inadaptés à ce profil.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">La Réunion</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Une double singularité génétique</h1>
+  </div>
+  <div style="display:flex;gap:56px;flex:1;">
+    <!-- Left: 2 cards -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:18px;">
+      <div style="flex:1;padding:28px 32px;background:var(--bg-light);border-radius:12px;border:1px solid var(--border);">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--teal);margin-bottom:12px;text-transform:uppercase;letter-spacing:2px;">Admixture multicontinentale</div>
+        <p style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:#2A3A48;line-height:1.6;margin:0;">Peuplement sans autochtones, façonné par l'esclavage (Afrique, Madagascar), l'engagisme (Inde du Sud, Chine) et les migrations récentes. Chaque individu porte une combinaison unique de segments ancestraux sur un espace insulaire clos.</p>
+      </div>
+      <div style="flex:1;padding:28px 32px;background:oklch(0.97 0.015 30);border-radius:12px;border:1px solid oklch(0.90 0.04 30);">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--coral);margin-bottom:12px;text-transform:uppercase;letter-spacing:2px;">Effet fondateur</div>
+        <p style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:#2A3A48;line-height:1.6;margin:0;">Variants rares localement fixés, invisibles dans les bases mondiales. Ex. : syndrome de Larsen-Bourbon (B4GALT7) et syndrome de Ravine, décrits uniquement chez des familles réunionnaises.</p>
+      </div>
+    </div>
+    <!-- Right: ancestry bars -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:20px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--navy);margin:0;">Composition ancestrale illustrative</h2>
+      <div style="display:flex;flex-direction:column;gap:18px;flex:1;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:210px;flex-shrink:0;">Afrique / Malgache</span>
+          <div style="flex:1;height:34px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:45%;height:100%;background:var(--teal);"></div></div>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--teal);width:56px;text-align:right;">45%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:210px;flex-shrink:0;">Inde du Sud</span>
+          <div style="flex:1;height:34px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:25%;height:100%;background:var(--coral);"></div></div>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--coral);width:56px;text-align:right;">25%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:210px;flex-shrink:0;">Européen</span>
+          <div style="flex:1;height:34px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:15%;height:100%;background:var(--navy);"></div></div>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);width:56px;text-align:right;">15%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:210px;flex-shrink:0;">Zarabe / Gujarati</span>
+          <div style="flex:1;height:34px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:8%;height:100%;background:oklch(0.55 0.12 200);"></div></div>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:oklch(0.50 0.12 200);width:56px;text-align:right;">8%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:210px;flex-shrink:0;">Chinois / Asie</span>
+          <div style="flex:1;height:34px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:7%;height:100%;background:oklch(0.50 0.10 150);"></div></div>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:oklch(0.50 0.10 150);width:56px;text-align:right;">7%</span>
+        </div>
+      </div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);font-style:italic;margin:0;">Valeurs illustratives · à valider sur la cohorte</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     04 — IMPACT CLINIQUE VUS
+═══════════════════════════════════════════════ -->
+<section data-label="04 — Impact clinique" data-screen-label="04" data-speaker-notes="Le résultat concret du biais : les patients réunionnais reçoivent plus de VUS, menant à des diagnostics erronés, de l'errance et de l'anxiété familiale.">
+<div style="display:flex;flex-direction:column;height:100%;background:var(--bg-light);padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Impact clinique</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Le mur clinique : VUS et pertes de chance</h1>
+  </div>
+  <div style="display:flex;gap:36px;flex:1;align-items:stretch;">
+    <!-- European -->
+    <div style="flex:1;background:white;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:22px;border:2px solid var(--border);position:relative;">
+      <div style="position:absolute;top:0;left:0;right:0;height:6px;background:var(--teal);border-radius:16px 16px 0 0;"></div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px;">Patient Européen</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:52px;font-weight:700;color:var(--teal);">Diagnostic clair</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:#2A3A48;line-height:1.6;margin:0;">Variant interprétable grâce aux fréquences de référence calibrées sur sa population. Les bases gnomAD, ClinVar et les scores CADD sont robustes pour ce profil.</p>
+      <div style="margin-top:auto;padding:20px;background:oklch(0.95 0.04 160);border-radius:8px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:oklch(0.40 0.15 150);">Résultat : prise en charge adaptée</span>
+      </div>
+    </div>
+    <!-- VS -->
+    <div style="display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:40px;color:var(--muted);flex-shrink:0;width:60px;">vs</div>
+    <!-- Reunionese -->
+    <div style="flex:1;background:white;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:18px;border:2px solid oklch(0.85 0.06 30);position:relative;">
+      <div style="position:absolute;top:0;left:0;right:0;height:6px;background:var(--coral);border-radius:16px 16px 0 0;"></div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px;">Patient Réunionnais</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:52px;font-weight:700;color:var(--coral);">VUS — Signification Inconnue</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="padding:14px 18px;background:oklch(0.97 0.02 30);border-radius:8px;border-left:4px solid var(--coral);">
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:#2A3A48;margin:0;line-height:1.4;">Faux positifs — diagnostics erronés (ex. cardiomyopathie hypertrophique)</p>
+        </div>
+        <div style="padding:14px 18px;background:oklch(0.97 0.02 30);border-radius:8px;border-left:4px solid var(--coral);">
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:#2A3A48;margin:0;line-height:1.4;">Analyses complémentaires inutiles · errance diagnostique</p>
+        </div>
+        <div style="padding:14px 18px;background:oklch(0.97 0.02 30);border-radius:8px;border-left:4px solid var(--coral);">
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:#2A3A48;margin:0;line-height:1.4;">Anxiété familiale · coûts supplémentaires pour le CHU</p>
+        </div>
+      </div>
+      <div style="margin-top:auto;padding:20px;background:oklch(0.95 0.04 30);border-radius:8px;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--coral);">Résultat : perte de chance · inégalité de soin</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     04b — PHARMACOGÉNÉTIQUE ET RISQUES DE DOSAGE
+═══════════════════════════════════════════════ -->
+<section data-label="04b — Risques pharmaceutiques" data-screen-label="04b" data-speaker-notes="Les algorithmes de dosage sont calibrés sur des cohortes européennes. Les allèles CYP africains fréquents à La Réunion n'y sont pas représentés, entraînant des risques concrets de sous ou surdosage.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:52px 100px 48px;gap:22px;box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:6px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Pharmacogénétique</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:54px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Risques liés à la dose pharmaceutique</h1>
+  </div>
+  <div style="display:flex;gap:48px;flex:1;min-height:0;">
+    <!-- Left -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:12px;min-height:0;">
+      <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:#2A3A48;line-height:1.45;margin:0;">Les algorithmes de dosage sont calibrés sur des cohortes européennes. Les allèles CYP fréquents en Afrique sont <strong style="color:var(--coral);">absents ou sous-représentés</strong> — un patient réunionnais peut recevoir une dose <strong>inadaptée à son profil enzymatique réel.</strong></p>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--bg-light);border-radius:8px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);width:100px;flex-shrink:0;">CYP2C9</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Allèles *5, *6, *8, *11 → métabolisme lent de la <strong style="color:var(--navy);">warfarine</strong> → risque hémorragique si dose standard</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--bg-light);border-radius:8px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);width:100px;flex-shrink:0;">CYP2C19</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Variabilité du métabolisme du <strong style="color:var(--navy);">clopidogrel</strong> → sous-activation → risque thrombotique accru</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:var(--bg-light);border-radius:8px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);width:100px;flex-shrink:0;">CYP2D6</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Codéine, tamoxifène — métaboliseurs ultra-rapides ou pauvres non capturés dans les guides standards</p>
+        </div>
+      </div>
+    </div>
+    <!-- Right -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin:0;">Conséquences cliniques</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:1;min-height:0;">
+        <div style="padding:16px 18px;background:oklch(0.96 0.03 30);border-radius:10px;border:1px solid oklch(0.88 0.06 30);display:flex;flex-direction:column;gap:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;color:var(--coral);line-height:1;">Surdosage</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:#2A3A48;margin:0;line-height:1.35;">Métabolisme lent non identifié → accumulation → toxicité, hémorragie</p>
+        </div>
+        <div style="padding:16px 18px;background:oklch(0.96 0.03 30);border-radius:10px;border:1px solid oklch(0.88 0.06 30);display:flex;flex-direction:column;gap:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;color:var(--coral);line-height:1;">Sous-dosage</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:#2A3A48;margin:0;line-height:1.35;">Métabolisme ultra-rapide → élimination trop rapide → inefficacité</p>
+        </div>
+        <div style="padding:16px 18px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;color:var(--navy);line-height:1;">Invisible</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.35;">Variant causal classé VUS dans gnomAD — cause du problème non identifiée</p>
+        </div>
+        <div style="padding:16px 18px;background:oklch(0.95 0.02 183);border-radius:10px;border:1px solid oklch(0.87 0.04 183);display:flex;flex-direction:column;gap:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;color:var(--teal);line-height:1;">Solution</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:#2A3A48;margin:0;line-height:1.35;">Module IA 02 recalibre les recommandations CPIC sur les profils admixés réunionnais</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     04c — BIAIS IA CONCEPTION MÉDICAMENTS
+═══════════════════════════════════════════════ -->
+<section data-label="04c — Biais IA médicaments" data-screen-label="04c" data-speaker-notes="Les modèles d'IA utilisés en drug discovery et pour les scores de risque polygénique sont entraînés sur des données euro-centrées. Cela crée des dérives systématiques dans la conception de médicaments et leur validation pour les populations non-européennes.">
+<div style="display:flex;flex-direction:column;height:100%;background:var(--bg-light);padding:52px 100px 48px;gap:22px;box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:6px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Intelligence artificielle &amp; médicaments</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:54px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Dérives et biais de l'IA dans la conception de médicaments</h1>
+  </div>
+  <div style="display:flex;gap:44px;flex:1;min-height:0;">
+    <!-- Left: intro + chain -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:12px;min-height:0;">
+      <p style="font-family:'DM Sans',sans-serif;font-size:25px;color:#2A3A48;line-height:1.45;margin:0;">Les modèles d'IA utilisés en <em>drug discovery</em> et pour les scores PRS sont entraînés sur des bases génomiques <strong style="color:var(--coral);">majoritairement européennes.</strong> Ce biais se propage à chaque étape.</p>
+      <div style="display:flex;flex-direction:column;gap:0;flex:1;">
+        <div style="padding:14px 18px;background:white;border-radius:10px 10px 0 0;border:1px solid var(--border);border-bottom:none;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:3px;">1 — Données d'entraînement biaisées</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">GWAS, biobanques et essais cliniques dominés par des individus d'ascendance européenne</p>
+        </div>
+        <div style="display:flex;justify-content:center;height:20px;background:white;border-left:1px solid var(--border);border-right:1px solid var(--border);align-items:center;">
+          <div style="width:2px;height:100%;background:var(--coral);"></div>
+        </div>
+        <div style="padding:14px 18px;background:white;border:1px solid var(--border);border-top:none;border-bottom:none;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:3px;">2 — Cibles thérapeutiques biaisées</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Variants pertinents = ceux fréquents en Europe — variants africains ou admixés ignorés</p>
+        </div>
+        <div style="display:flex;justify-content:center;height:20px;background:white;border-left:1px solid var(--border);border-right:1px solid var(--border);align-items:center;">
+          <div style="width:2px;height:100%;background:var(--coral);"></div>
+        </div>
+        <div style="padding:14px 18px;background:white;border-radius:0 0 10px 10px;border:1px solid var(--border);border-top:none;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:3px;">3 — Médicaments moins efficaces pour La Réunion</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Efficacité et profil de risque mal prédits sur populations admixées non représentées</p>
+        </div>
+      </div>
+    </div>
+    <!-- Right: 4 bias cards -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin:0;">4 dérives systématiques identifiées</h2>
+      <div style="display:flex;flex-direction:column;gap:8px;flex:1;justify-content:center;">
+        <div style="padding:14px 18px;background:white;border-radius:10px;border:1px solid var(--border);display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:32px;height:32px;border-radius:8px;background:var(--navy);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;margin-top:2px;">1</div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:2px;">PRS non transférables</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Polygenic Risk Scores pour diabète T2, HTA, cardiopathies — 40–60 % de précision perdue sur populations admixées</p>
+          </div>
+        </div>
+        <div style="padding:14px 18px;background:white;border-radius:10px;border:1px solid var(--border);display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:32px;height:32px;border-radius:8px;background:var(--teal);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;margin-top:2px;">2</div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:2px;">Scores de pathogénicité mal calibrés</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">CADD, SIFT, PolyPhen → faux négatifs et faux positifs multipliés pour les variants réunionnais</p>
+          </div>
+        </div>
+        <div style="padding:14px 18px;background:white;border-radius:10px;border:1px solid var(--border);display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:32px;height:32px;border-radius:8px;background:var(--coral);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;margin-top:2px;">3</div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:2px;">Drug discovery euro-centré</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Cibles moléculaires validées sur GWAS européens — pertinence incertaine pour les populations africaines ou indiennes</p>
+          </div>
+        </div>
+        <div style="padding:14px 18px;background:white;border-radius:10px;border:1px solid var(--border);display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:32px;height:32px;border-radius:8px;background:oklch(0.52 0.13 72);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:white;margin-top:2px;">4</div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:2px;">Essais cliniques non représentatifs</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">AMM obtenues sur cohortes européennes — efficacité et tolérance pour La Réunion non établies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     05 — OBJECTIFS DU PROJET
+═══════════════════════════════════════════════ -->
+<section data-label="05 — Objectifs" data-screen-label="05" data-speaker-notes="Les 4 chiffres clés : 2 500 individus génotypés, 350 WGS pris en charge par POPgen à 0€, 100 familles nucléaires, 36 mois avec 4 modules IA.">
+<div style="display:flex;flex-direction:column;height:100%;background:var(--navy);padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--coral);letter-spacing:3px;text-transform:uppercase;">Objectifs du projet</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:white;margin:0;line-height:1.1;">Les chiffres clés</h1>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;flex:1;align-items:center;">
+    <div style="background:rgba(255,255,255,0.08);border-radius:16px;padding:40px 32px;display:flex;flex-direction:column;gap:14px;border:1px solid rgba(255,255,255,0.12);height:100%;box-sizing:border-box;justify-content:center;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:82px;font-weight:700;color:white;line-height:1;">2 500</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:rgba(255,255,255,0.68);line-height:1.4;">Individus génotypés sur puce SNP (~1,9 M SNP)</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--teal);letter-spacing:1px;text-transform:uppercase;">Cohorte SNP</div>
+    </div>
+    <div style="background:rgba(30,110,140,0.3);border-radius:16px;padding:40px 32px;display:flex;flex-direction:column;gap:14px;border:1px solid rgba(30,110,140,0.5);height:100%;box-sizing:border-box;justify-content:center;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:82px;font-weight:700;color:white;line-height:1;">350</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:rgba(255,255,255,0.68);line-height:1.4;">WGS sélectionnés via algorithme S_div</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:#7AB5CC;letter-spacing:1px;text-transform:uppercase;">Panel WGS · 0 € (POPgen)</div>
+    </div>
+    <div style="background:rgba(232,101,74,0.2);border-radius:16px;padding:40px 32px;display:flex;flex-direction:column;gap:14px;border:1px solid rgba(232,101,74,0.4);height:100%;box-sizing:border-box;justify-content:center;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:82px;font-weight:700;color:white;line-height:1;">100</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:rgba(255,255,255,0.68);line-height:1.4;">Familles nucléaires pour phasage haplotypique</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--coral);letter-spacing:1px;text-transform:uppercase;">Module familial</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.05);border-radius:16px;padding:40px 32px;display:flex;flex-direction:column;gap:14px;border:1px solid rgba(255,255,255,0.10);height:100%;box-sizing:border-box;justify-content:center;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:64px;font-weight:700;color:white;line-height:1.1;">36 mois</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:rgba(255,255,255,0.68);line-height:1.4;">7 phases · 4 modules IA cliniques · portail web</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:oklch(0.75 0.1 80);letter-spacing:1px;text-transform:uppercase;">Durée totale</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     06 — PIPELINE MÉTHODOLOGIQUE
+═══════════════════════════════════════════════ -->
+<section data-label="06 — Pipeline méthodologique" data-screen-label="06" data-speaker-notes="3 couches complémentaires : cohorte SNP 2500 pour la structure populationnelle, 100 familles pour le phasage, 350 WGS optimisés pour la découverte de variants. Le WGS est pris en charge par POPgen.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Architecture scientifique</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Pipeline méthodologique en 3 couches</h1>
+  </div>
+  <div style="display:flex;gap:0;flex:1;align-items:stretch;">
+    <!-- Step 1 -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:18px;padding:36px 40px;background:var(--navy);border-radius:16px 0 0 16px;box-sizing:border-box;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:50px;height:50px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);flex-shrink:0;">1</div>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:2px;text-transform:uppercase;">Couche populationnelle</span>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:white;margin:0;line-height:1.1;">Cohorte SNP</h2>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:700;color:rgba(255,255,255,0.2);line-height:1;">2 500</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:rgba(255,255,255,0.72);line-height:1.5;margin:0;">Génotypage puce GDA-8 · ~1,9 M SNP · Structure génétique · Base du recalibrage des fréquences finales</p>
+      <div style="margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="padding:6px 14px;background:rgba(255,255,255,0.1);border-radius:20px;font-size:24px;color:rgba(255,255,255,0.7);font-family:'DM Sans',sans-serif;">PCA</span>
+        <span style="padding:6px 14px;background:rgba(255,255,255,0.1);border-radius:20px;font-size:24px;color:rgba(255,255,255,0.7);font-family:'DM Sans',sans-serif;">ADMIXTURE</span>
+        <span style="padding:6px 14px;background:rgba(255,255,255,0.1);border-radius:20px;font-size:24px;color:rgba(255,255,255,0.7);font-family:'DM Sans',sans-serif;">QC génotypage</span>
+      </div>
+    </div>
+    <!-- Arrow 1 -->
+    <div style="display:flex;align-items:center;flex-shrink:0;background:var(--teal);width:48px;position:relative;">
+      <div style="position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:18px solid transparent;border-bottom:18px solid transparent;border-left:16px solid var(--teal);z-index:2;"></div>
+    </div>
+    <!-- Step 2 -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:18px;padding:36px 40px;background:var(--teal);box-sizing:border-box;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:50px;height:50px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--teal);flex-shrink:0;">2</div>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:2px;text-transform:uppercase;">Module familial</span>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:white;margin:0;line-height:1.1;">100 Familles</h2>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:700;color:rgba(255,255,255,0.22);line-height:1;">~300 ind.</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:rgba(255,255,255,0.85);line-height:1.5;margin:0;">Hors cohorte · Transmission mendélienne · Phasage haplotypique réunionnais via SHAPEIT4</p>
+      <div style="margin-top:auto;padding:14px 18px;background:rgba(255,255,255,0.15);border-radius:8px;">
+        <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.9);margin:0;line-height:1.3;font-style:italic;">Ressource technique — non incluse dans les analyses de fréquences</p>
+      </div>
+    </div>
+    <!-- Arrow 2 -->
+    <div style="display:flex;align-items:center;flex-shrink:0;background:var(--coral);width:48px;position:relative;">
+      <div style="position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:18px solid transparent;border-bottom:18px solid transparent;border-left:16px solid var(--coral);z-index:2;"></div>
+    </div>
+    <!-- Step 3 -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:18px;padding:36px 40px;background:oklch(0.97 0.02 30);border:2px solid oklch(0.87 0.06 30);border-radius:0 16px 16px 0;box-sizing:border-box;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:50px;height:50px;border-radius:50%;background:var(--coral);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;flex-shrink:0;">3</div>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--coral);letter-spacing:2px;text-transform:uppercase;">Panel hybride · POPgen</span>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">350 WGS</h2>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:700;color:var(--coral);opacity:0.35;line-height:1;">322 + 28</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:#2A3A48;line-height:1.5;margin:0;">Noyau géo-ancestral (322) + bras découverte (28) · Séquençage WGS pris en charge par POPgen à <strong>coût nul</strong></p>
+      <div style="margin-top:auto;padding:14px 18px;background:oklch(0.92 0.05 30);border-radius:8px;">
+        <p style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--coral);font-weight:700;margin:0;">Sélection via algorithme S_div</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     07 — ALGORITHME S_div
+═══════════════════════════════════════════════ -->
+<section data-label="07 — Algorithme S_div" data-screen-label="07" data-speaker-notes="L'algorithme S_div est le cœur de la sélection des 350 WGS. Score composite pondéré, reproductible et auditable, classant les individus au sein de chaque cellule géo-ancestrale.">
+<div style="display:flex;flex-direction:column;height:100%;background:var(--bg-light);padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Algorithme de sélection</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Score géo-ancestral S_div</h1>
+  </div>
+  <!-- Formula -->
+  <div style="background:var(--navy);border-radius:14px;padding:28px 36px;display:flex;align-items:center;justify-content:center;">
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:34px;color:white;margin:0;text-align:center;line-height:1.7;">
+      <span style="color:var(--coral);font-weight:700;">S_div(i)</span> &nbsp;=&nbsp;
+      <span style="color:oklch(0.78 0.12 80);">0,30</span> × <span style="color:#7AB5CC;">PCA_score</span> &nbsp;+&nbsp;
+      <span style="color:oklch(0.78 0.12 80);">0,30</span> × <span style="color:var(--coral);">ADMIX_score</span> &nbsp;+&nbsp;
+      <span style="color:oklch(0.78 0.12 80);">0,25</span> × <span style="color:oklch(0.72 0.15 160);">IBD_score</span> &nbsp;+&nbsp;
+      <span style="color:oklch(0.78 0.12 80);">0,15</span> × <span style="color:oklch(0.80 0.10 60);">ROH_score</span>
+    </p>
+  </div>
+  <!-- 4 components -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;flex:1;">
+    <div style="background:white;border-radius:12px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;border:1px solid var(--border);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:700;color:#7AB5CC;line-height:1;">30%</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--navy);">PCA_score</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:500;color:var(--muted);">Position génétique</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;flex:1;">Distance au centroïde dans l'espace ancré sur les pools témoins 1000G + EGA. Capture la marginalité génétique du secteur.</p>
+    </div>
+    <div style="background:white;border-radius:12px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;border:1px solid var(--border);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:700;color:var(--coral);line-height:1;">30%</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--navy);">ADMIX_score</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:500;color:var(--muted);">Composition ancestrale</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;flex:1;">Entropie de Shannon des proportions ancestrales issues d'ADMIXTURE supervisée. Diversité ancestrale individuelle.</p>
+    </div>
+    <div style="background:white;border-radius:12px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;border:1px solid var(--border);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:700;color:oklch(0.50 0.15 160);line-height:1;">25%</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--navy);">IBD_score</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:500;color:var(--muted);">Indépendance génétique</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;flex:1;">1 − max parenté KING. Évite la redondance. Contrainte dure : kinship ≥ 0,0625 = exclusion du panel.</p>
+    </div>
+    <div style="background:white;border-radius:12px;padding:26px 22px;display:flex;flex-direction:column;gap:10px;border:1px solid var(--border);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:700;color:oklch(0.55 0.12 60);line-height:1;">15%</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:700;color:var(--navy);">ROH_score</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:500;color:var(--muted);">Signature fondatrice</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;flex:1;">max(0, 1 − ROH_total/100 Mb). Pénalise l'excès d'autozygotie — consanguinité ou effet fondateur fort.</p>
+    </div>
+  </div>
+  <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);font-style:italic;margin:0;">Robustesse : 100+ ordres aléatoires de secteurs · cible de stabilité &gt; 95 % · poids analysés par sensibilité ±10 %</p>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     08 — CALENDRIER 7 PHASES
+═══════════════════════════════════════════════ -->
+<section data-label="08 — Calendrier" data-screen-label="08" data-speaker-notes="7 phases sur 36 mois. Phase 0-1 : préparation. Phase 2-3 : collecte et génotypage. Phase 4 : WGS POPgen. Phase 5 : modules IA. Phase 6 : portail clinique.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Calendrier</span>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">7 phases sur 36 mois</h1>
+    </div>
+    <div style="font-family:'DM Sans',sans-serif;font-size:var(--type-small);color:var(--muted);">WGS 350 individus — <strong style="color:oklch(0.45 0.15 150);">0 € (POPgen)</strong></div>
+  </div>
+  <!-- Timeline bar -->
+  <div style="height:8px;background:var(--border);border-radius:4px;position:relative;flex-shrink:0;">
+    <div style="position:absolute;left:0;top:0;width:100%;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--navy) 0%,var(--teal) 50%,var(--coral) 100%);"></div>
+  </div>
+  <!-- Phase cards -->
+  <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:10px;flex:1;align-items:start;">
+    <div style="background:var(--bg-light);border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--navy);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);">Phase 0</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.2;">Panels témoins</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.4;">Accès 1000G, EGA, H3Africa, MGUA</p>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--teal);margin-top:auto;">M1–M3</span>
+    </div>
+    <div style="background:var(--bg-light);border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--navy);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);">Phase 1</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.2;">Validation externe</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.4;">Simulation 1000G · Gel paramètres V3.5</p>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--teal);margin-top:auto;">M1–M5</span>
+    </div>
+    <div style="background:var(--bg-light);border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--teal);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--teal);">Phase 2</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.2;">Cohorte SNP</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.4;">QC 2 500 · PCA · ADMIXTURE · sélection 350</p>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--teal);margin-top:auto;">M4–M9</span>
+    </div>
+    <div style="background:var(--bg-light);border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--teal);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--teal);">Phase 3</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.2;">Module familial</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.4;">100 familles · phasage haplotypique</p>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--teal);margin-top:auto;">M4–M14</span>
+    </div>
+    <div style="background:var(--bg-light);border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--coral);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--coral);">Phase 4</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.2;">WGS POPgen</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.4;">VCF/BAM · base variants · fréquences locales</p>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--coral);margin-top:auto;">M8–M22</span>
+    </div>
+    <div style="background:var(--bg-light);border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--coral);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--coral);">Phase 5</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.2;">Modules IA</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.4;">4 modules cliniques · AUC ≥ 0,85</p>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--coral);margin-top:auto;">M17–M30</span>
+    </div>
+    <div style="background:var(--bg-light);border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--coral);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--coral);">Phase 6</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);line-height:1.2;">Portail clinique</div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.4;">Django · API &lt; 500 ms · publication</p>
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--coral);margin-top:auto;">M27–M36</span>
+    </div>
+  </div>
+  <!-- Milestones strip -->
+  <div style="display:flex;gap:20px;font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);flex-wrap:wrap;">
+    <span><strong style="color:var(--navy);">M9</strong> — Liste WGS gelée</span><span>·</span>
+    <span><strong style="color:var(--navy);">M22</strong> — Premiers VCF/BAM</span><span>·</span>
+    <span><strong style="color:var(--navy);">M26</strong> — IA modules 1+2 validés</span><span>·</span>
+    <span><strong style="color:var(--navy);">M34</strong> — Portail en production</span><span>·</span>
+    <span><strong style="color:var(--navy);">M36</strong> — ≥ 3 publications · ≥ 5 centres</span>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     09 — MODULES IA
+═══════════════════════════════════════════════ -->
+<section data-label="09 — Modules IA" data-screen-label="09" data-speaker-notes="4 modules IA qui transforment le référentiel en aide à la décision clinique recalibrée sur la population réunionnaise : pathogénicité, pharmacogénétique, admixture, PRS.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Valorisation clinique</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">4 modules d'IA clinique</h1>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:22px;flex:1;">
+    <!-- IA 01 -->
+    <div style="background:var(--bg-light);border-radius:16px;padding:32px;display:flex;gap:22px;border:1px solid var(--border);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:700;color:var(--navy);opacity:0.12;flex-shrink:0;line-height:1;align-self:center;">01</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--navy);margin:0;line-height:1.2;">Pathogénicité des variants</h2>
+        <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.5;">Graph Neural Networks · ClinVar + COSMIC + variants locaux · Reclassification des VUS réunionnais</p>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--teal);margin-top:auto;">Cible : AUC ≥ 0,85 sur jeu de validation local</div>
+      </div>
+    </div>
+    <!-- IA 02 -->
+    <div style="background:oklch(0.97 0.015 30);border-radius:16px;padding:32px;display:flex;gap:22px;border:1px solid oklch(0.88 0.04 30);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:700;color:var(--coral);opacity:0.22;flex-shrink:0;line-height:1;align-self:center;">02</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--navy);margin:0;line-height:1.2;">Pharmacogénétique × admixture</h2>
+        <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.5;">Random Forest + XGBoost · CYP2C19, CYP2D6, CYP3A4/5 · Recommandation thérapeutique personnalisée</p>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--coral);margin-top:auto;">Comparaison vs recommandations CPIC</div>
+      </div>
+    </div>
+    <!-- IA 03 -->
+    <div style="background:oklch(0.97 0.015 240);border-radius:16px;padding:32px;display:flex;gap:22px;border:1px solid oklch(0.88 0.04 240);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:700;color:oklch(0.43 0.14 252);opacity:0.22;flex-shrink:0;line-height:1;align-self:center;">03</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--navy);margin:0;line-height:1.2;">Analyse d'admixture</h2>
+        <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.5;">Autoencoders + clustering HDBSCAN · Scores ADMIXTURE, PCA, IBD et ROH · Profils ancestraux individualisés</p>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:oklch(0.43 0.14 252);margin-top:auto;">Profils + strate géo-ancestrale par individu</div>
+      </div>
+    </div>
+    <!-- IA 04 -->
+    <div style="background:oklch(0.97 0.015 150);border-radius:16px;padding:32px;display:flex;gap:22px;border:1px solid oklch(0.88 0.04 150);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:60px;font-weight:700;color:oklch(0.45 0.15 150);opacity:0.22;flex-shrink:0;line-height:1;align-self:center;">04</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--navy);margin:0;line-height:1.2;">Polygenic Risk Score recalibré</h2>
+        <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.5;">Recalibrage local · Diabète T2, HTA, cardiopathies · Prévention stratifiée pour La Réunion</p>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:oklch(0.45 0.15 150);margin-top:auto;">Risque stratifié × population × secteur géographique</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     10 — SECTION BUDGET
+═══════════════════════════════════════════════ -->
+<section data-label="10 — [Section] Budget" data-screen-label="10" data-speaker-notes="Section Budget : postes de dépenses, 3 décisions structurantes, scénarios et financements envisagés.">
+<div style="display:flex;flex-direction:column;height:100%;background:var(--navy);position:relative;overflow:hidden;justify-content:center;padding:var(--pad-top) var(--pad-x) var(--pad-bot);">
+  <div style="position:absolute;right:-40px;top:-40px;bottom:-40px;width:520px;opacity:0.05;pointer-events:none;">
+    <svg viewBox="0 0 520 1160" fill="none" style="width:100%;height:100%;">
+      <path d="M0,120 C87,40 173,40 260,120 C347,200 433,200 520,120" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,320 C87,240 173,240 260,320 C347,400 433,400 520,320" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,520 C87,440 173,440 260,520 C347,600 433,600 520,520" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,720 C87,640 173,640 260,720 C347,800 433,800 520,720" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,920 C87,840 173,840 260,920 C347,1000 433,1000 520,920" stroke="white" stroke-width="56" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:32px;">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--coral);letter-spacing:4px;text-transform:uppercase;">Plan économique</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:96px;font-weight:700;color:white;margin:0;line-height:1;">Budget</h1>
+    <p style="font-family:'DM Sans',sans-serif;font-size:var(--type-body);color:rgba(255,255,255,0.62);max-width:800px;line-height:1.5;margin:0;">Postes de dépenses · Décisions structurantes · Scénarios budgétaires · Financements envisagés</p>
+    <div style="display:flex;gap:56px;margin-top:12px;">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:white;line-height:1;">~1,4 M€</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:26px;color:rgba(255,255,255,0.5);">Scénario Optimal</div>
+      </div>
+      <div style="width:1px;background:rgba(255,255,255,0.15);"></div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--coral);line-height:1;">~1,7 M€</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:26px;color:rgba(255,255,255,0.5);">Scénario Maximal</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     11 — POSTES DE DÉPENSES
+═══════════════════════════════════════════════ -->
+<section data-label="11 — Postes de dépenses" data-screen-label="11" data-speaker-notes="Principal poste : ressources humaines (30%). Suivi de l'infrastructure IT et du génotypage SNP. Le WGS 350 individus est pris en charge par POPgen : 0€ pour le laboratoire.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Budget</span>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Postes de dépenses</h1>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:700;color:var(--navy);line-height:1;">1 709 000 €</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);">Scénario Maximal · iScan + Prop. RH 2 + contingence 10 %</div>
+    </div>
+  </div>
+  <!-- Bars -->
+  <div style="display:flex;flex-direction:column;gap:16px;flex:1;justify-content:center;">
+    <div style="display:flex;align-items:center;gap:20px;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:270px;flex-shrink:0;text-align:right;">RH Prop. 2 (coût employeur)</span>
+      <div style="flex:1;height:42px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:100%;height:100%;background:var(--teal);display:flex;align-items:center;padding:0 16px;"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;">524 000 €</span></div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:270px;flex-shrink:0;text-align:right;">Infrastructure IT on-premise</span>
+      <div style="flex:1;height:42px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:64%;height:100%;background:oklch(0.43 0.14 252);display:flex;align-items:center;padding:0 16px;"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;">334 000 €</span></div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:270px;flex-shrink:0;text-align:right;">iScan + AutoLoader + qualification</span>
+      <div style="flex:1;height:42px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:48%;height:100%;background:var(--coral);display:flex;align-items:center;padding:0 16px;"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;">253 000 €</span></div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:270px;flex-shrink:0;text-align:right;">Génotypage GDA-8 (consommables)</span>
+      <div style="flex:1;height:42px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:43%;height:100%;background:oklch(0.52 0.13 72);display:flex;align-items:center;padding:0 16px;"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;">226 000 €</span></div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:270px;flex-shrink:0;text-align:right;">Conservation CRB 36 mois</span>
+      <div style="flex:1;height:42px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:24%;height:100%;background:oklch(0.52 0.08 200);display:flex;align-items:center;padding:0 16px;"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;">128 000 €</span></div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:270px;flex-shrink:0;text-align:right;">Extraction ADN + web + formation</span>
+      <div style="flex:1;height:42px;background:var(--border);border-radius:4px;overflow:hidden;"><div style="width:17%;height:100%;background:var(--muted);display:flex;align-items:center;padding:0 16px;"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;">89 000 €</span></div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;opacity:0.5;">
+      <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);width:270px;flex-shrink:0;text-align:right;font-style:italic;">WGS 350 individus (POPgen)</span>
+      <div style="flex:1;height:42px;background:var(--border);border-radius:4px;display:flex;align-items:center;padding:0 16px;"><span style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:oklch(0.45 0.15 150);">0 € — pris en charge par le consortium POPgen</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     12 — 3 DÉCISIONS STRUCTURANTES
+═══════════════════════════════════════════════ -->
+<section data-label="12 — 3 décisions structurantes" data-screen-label="12" data-speaker-notes="3 décisions clés : génotypage (sous-traitance vs iScan), infrastructure IT (cloud vs on-premise), et proposition RH (stages+CDD vs alternance+CIFRE). La proposition 2 RH est recommandée.">
+<div style="display:flex;flex-direction:column;height:100%;background:var(--bg-light);padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Budget</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Les 3 décisions structurantes</h1>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;flex:1;">
+    <!-- D1 -->
+    <div style="background:white;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;border:1px solid var(--border);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);padding-bottom:14px;border-bottom:2px solid var(--border);">Décision 1 — Génotypage SNP</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
+        <div style="padding:14px 18px;background:var(--bg-light);border-radius:8px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--muted);margin-bottom:4px;">Option A</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);font-weight:500;">Sous-traitance (CNG, GenomEast…)</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--teal);margin-top:4px;">265 000 €</div>
+        </div>
+        <div style="padding:14px 18px;background:oklch(0.97 0.02 30);border-radius:8px;border:2px solid var(--coral);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--coral);margin-bottom:4px;">Option B</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);font-weight:500;">Acquisition iScan Illumina</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--coral);margin-top:4px;">479 000 €</div>
+        </div>
+      </div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);line-height:1.4;margin:0;font-style:italic;">L'iScan crée un actif durable ; génotypages futurs à &lt; 30 €/éch.</p>
+    </div>
+    <!-- D2 -->
+    <div style="background:white;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;border:1px solid var(--border);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);padding-bottom:14px;border-bottom:2px solid var(--border);">Décision 2 — Infrastructure IT</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
+        <div style="padding:14px 18px;background:var(--bg-light);border-radius:8px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--muted);margin-bottom:4px;">Option A</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);font-weight:500;">Cloud hybride HDS (OPEX)</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--teal);margin-top:4px;">270 000 €</div>
+        </div>
+        <div style="padding:14px 18px;background:oklch(0.97 0.02 30);border-radius:8px;border:2px solid var(--coral);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--coral);margin-bottom:4px;">Option B</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);font-weight:500;">On-premise CAPEX</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--coral);margin-top:4px;">334 000 €</div>
+        </div>
+      </div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);line-height:1.4;margin:0;font-style:italic;">On-premise = contrôle total · cloud = flexibilité avec coûts récurrents</p>
+    </div>
+    <!-- D3 -->
+    <div style="background:white;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px;border:1px solid var(--border);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);padding-bottom:14px;border-bottom:2px solid var(--border);">Décision 3 — Ressources humaines</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
+        <div style="padding:12px 16px;background:var(--bg-light);border-radius:8px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--muted);margin-bottom:2px;">Prop. 1 — Stages + CDD</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--navy);">565 000 €</div>
+        </div>
+        <div style="padding:12px 16px;background:oklch(0.97 0.02 30);border-radius:8px;border:2px solid var(--coral);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--coral);margin-bottom:2px;">Prop. 2 — Alternance + CIFRE</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--coral);">524 000 €</div>
+        </div>
+        <div style="padding:12px 16px;background:var(--bg-light);border-radius:8px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;color:var(--muted);margin-bottom:2px;">Prop. 3 — Max alternance</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--navy);">485 000 €</div>
+        </div>
+      </div>
+      <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);line-height:1.4;margin:0;font-style:italic;">Prop. 2 = meilleur équilibre coût / risque / complexité administrative</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     13 — SCÉNARIOS ET FINANCEMENTS
+═══════════════════════════════════════════════ -->
+<section data-label="13 — Scénarios et financements" data-screen-label="13" data-speaker-notes="Deux scénarios selon les décisions prises. Financements envisagés : FEDER, PHRC-R, partenariat POPgen, et dotations CHU.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Budget</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Scénarios et financements</h1>
+  </div>
+  <div style="display:flex;gap:40px;flex:1;align-items:stretch;">
+    <!-- Scenarios -->
+    <div style="flex:1.1;display:flex;flex-direction:column;gap:18px;">
+      <div style="flex:1;background:var(--bg-light);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--border);">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px;">Scénario Optimal</div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:68px;font-weight:700;color:var(--navy);line-height:1;">~1 403 000 €</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;padding:10px 14px;background:white;border-radius:6px;border:1px solid var(--border);">
+            <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);">Génotypage sous-traitance</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--teal);">265 K€</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:10px 14px;background:white;border-radius:6px;border:1px solid var(--border);">
+            <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);">Cloud hybride HDS</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--teal);">270 K€</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:10px 14px;background:white;border-radius:6px;border:1px solid var(--border);">
+            <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--navy);">Prop. RH 2</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--teal);">524 K€</span>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1;background:var(--navy);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:14px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:rgba(255,255,255,0.50);text-transform:uppercase;letter-spacing:2px;">Scénario Maximal</div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:68px;font-weight:700;color:var(--coral);line-height:1;">~1 709 000 €</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,0.08);border-radius:6px;">
+            <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:rgba(255,255,255,0.80);">iScan Illumina + qualification</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--coral);">479 K€</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,0.08);border-radius:6px;">
+            <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:rgba(255,255,255,0.80);">On-premise CAPEX</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--coral);">334 K€</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:10px 14px;background:rgba(255,255,255,0.08);border-radius:6px;">
+            <span style="font-family:'DM Sans',sans-serif;font-size:26px;color:rgba(255,255,255,0.80);">Prop. RH 2</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:var(--coral);">524 K€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Financing -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-h2);font-weight:700;color:var(--navy);margin:0;">Financements envisagés</h2>
+      <div style="flex:1;display:flex;flex-direction:column;gap:14px;justify-content:center;">
+        <div style="padding:22px 26px;background:oklch(0.96 0.015 250);border-radius:12px;border:1px solid oklch(0.87 0.04 250);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:oklch(0.35 0.14 252);margin-bottom:6px;">FEDER</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">Fonds Européen de Développement Régional · Dossier en préparation · Projet éligible Outre-Mer</p>
+        </div>
+        <div style="padding:22px 26px;background:oklch(0.96 0.015 150);border-radius:12px;border:1px solid oklch(0.87 0.04 150);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:oklch(0.45 0.15 150);margin-bottom:6px;">PHRC-R / PRTS</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">Programme Hospitalier de Recherche Clinique Régional · Accompagnement DRCI</p>
+        </div>
+        <div style="padding:22px 26px;background:oklch(0.96 0.02 183);border-radius:12px;border:1px solid oklch(0.87 0.05 183);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--teal);margin-bottom:6px;">POPgen — Partenariat WGS</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">Prise en charge intégrale 350 WGS · <strong style="color:oklch(0.45 0.15 150);">0 € pour le laboratoire</strong></p>
+        </div>
+        <div style="padding:22px 26px;background:var(--bg-light);border-radius:12px;border:1px solid var(--border);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px;">Dotations CHU + mécénat</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">ANR · Fondation de France · Appels à projets régionaux</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     14 — SECTION SYSTÈMES D'INFORMATION
+═══════════════════════════════════════════════ -->
+<section data-label="14 — [Section] Systèmes d'information" data-screen-label="14" data-speaker-notes="Section Systèmes d'Information : infrastructure, stockage, sécurité des données, architecture pipeline et accompagnement DSIO attendu.">
+<div style="display:flex;flex-direction:column;height:100%;background:var(--teal);position:relative;overflow:hidden;justify-content:center;padding:var(--pad-top) var(--pad-x) var(--pad-bot);">
+  <div style="position:absolute;right:-40px;top:-40px;bottom:-40px;width:520px;opacity:0.07;pointer-events:none;">
+    <svg viewBox="0 0 520 1160" fill="none" style="width:100%;height:100%;">
+      <path d="M0,120 C87,40 173,40 260,120 C347,200 433,200 520,120" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,320 C87,240 173,240 260,320 C347,400 433,400 520,320" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,520 C87,440 173,440 260,520 C347,600 433,600 520,520" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,720 C87,640 173,640 260,720 C347,800 433,800 520,720" stroke="white" stroke-width="56" stroke-linecap="round"/>
+      <path d="M0,920 C87,840 173,840 260,920 C347,1000 433,1000 520,920" stroke="white" stroke-width="56" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;gap:32px;">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:4px;text-transform:uppercase;">Aspects techniques</div>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:84px;font-weight:700;color:white;margin:0;line-height:1.05;">Systèmes<br>d'Information</h1>
+    <p style="font-family:'DM Sans',sans-serif;font-size:var(--type-body);color:rgba(255,255,255,0.72);max-width:860px;line-height:1.5;margin:0;">Infrastructure · Stockage · Hébergement · Sécurité des données · Architecture pipeline · Accompagnement DSIO</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     15 — INFRASTRUCTURE ET ÉQUIPEMENTS
+═══════════════════════════════════════════════ -->
+<section data-label="15 — Infrastructure IT" data-screen-label="15" data-speaker-notes="Besoins IT significatifs : serveurs HPC, stockage 200+ To, réseau sécurisé, environnement bioinformatique. Deux scénarios : on-premise 334 K€ ou cloud hybride HDS 270 K€.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Systèmes d'information</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Besoins en infrastructure et équipements</h1>
+  </div>
+  <div style="display:flex;gap:48px;flex:1;">
+    <!-- Left -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:14px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--navy);margin:0;padding-bottom:12px;border-bottom:2px solid var(--border);">Calcul &amp; Stockage</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="padding:18px 22px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);display:flex;gap:18px;">
+          <div style="flex-shrink:0;width:10px;height:10px;border-radius:50%;background:var(--teal);margin-top:10px;"></div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Serveurs HPC bioinformatique</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">CPU 64+ cœurs · RAM 512 Go · GPU (PyTorch/TensorFlow pour modules IA) · On-premise ~334 K€ CAPEX</p>
+          </div>
+        </div>
+        <div style="padding:18px 22px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);display:flex;gap:18px;">
+          <div style="flex-shrink:0;width:10px;height:10px;border-radius:50%;background:var(--teal);margin-top:10px;"></div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Stockage distribué</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">350 WGS ≈ 35 To bruts · ~200 To avec réplicats et travaux · RAID ou NAS distribué haute disponibilité</p>
+          </div>
+        </div>
+        <div style="padding:18px 22px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);display:flex;gap:18px;">
+          <div style="flex-shrink:0;width:10px;height:10px;border-radius:50%;background:var(--teal);margin-top:10px;"></div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">iScan Illumina (option B)</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">Appareil de génotypage SNP · puce GDA-8 · AutoLoader · qualification IQ/OQ · actif durable du CHU</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Right -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:14px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:var(--navy);margin:0;padding-bottom:12px;border-bottom:2px solid var(--border);">Réseau &amp; Logiciels</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="padding:18px 22px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);display:flex;gap:18px;">
+          <div style="flex-shrink:0;width:10px;height:10px;border-radius:50%;background:var(--coral);margin-top:10px;"></div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Environnement bioinformatique</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">PLINK/PLINK2 · KING · ADMIXTURE · SHAPEIT4 · BEAGLE · bcftools · Docker · PostgreSQL</p>
+          </div>
+        </div>
+        <div style="padding:18px 22px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);display:flex;gap:18px;">
+          <div style="flex-shrink:0;width:10px;height:10px;border-radius:50%;background:var(--coral);margin-top:10px;"></div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Portail web clinique</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">Django · API REST (&lt; 500 ms) · Kubernetes · MLflow · ONNX Runtime · MongoDB · TLS</p>
+          </div>
+        </div>
+        <div style="padding:18px 22px;background:var(--bg-light);border-radius:10px;border:1px solid var(--border);display:flex;gap:18px;">
+          <div style="flex-shrink:0;width:10px;height:10px;border-radius:50%;background:var(--coral);margin-top:10px;"></div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Réseau &amp; connectivité</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:26px;color:var(--muted);margin:0;line-height:1.4;">Réseau interne 10 Gbps · VPN sécurisé · flux chiffrés vers POPgen et partenaires génotypage</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     16 — STOCKAGE, HÉBERGEMENT ET SÉCURITÉ
+═══════════════════════════════════════════════ -->
+<section data-label="16 — Sécurité des données" data-screen-label="16" data-speaker-notes="Données médicales et génomiques : exigences HDS obligatoires, conformité RGPD, pseudonymisation, chiffrement AES-256, contrôle des accès, plan de continuité.">
+<div style="display:flex;flex-direction:column;height:100%;background:var(--bg-light);padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Systèmes d'information</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Stockage, hébergement et sécurité des données</h1>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;flex:1;">
+    <!-- Pillar 1 -->
+    <div style="background:white;border-radius:16px;padding:32px 26px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--border);">
+      <div style="width:54px;height:54px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="2" width="24" height="24" rx="4" stroke="white" stroke-width="2.5"/><path d="M2 9h24M2 16h24" stroke="white" stroke-width="2.5"/><circle cx="7" cy="5.5" r="1.5" fill="white"/><circle cx="12" cy="5.5" r="1.5" fill="white"/></svg>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Hébergement</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+        <div style="padding:12px 14px;background:var(--bg-light);border-radius:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;">HDS obligatoire</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Hébergeur de Données de Santé certifié pour toutes les données génomiques cliniques</p>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg-light);border-radius:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;">2 scénarios</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">On-premise CHU (334 K€ CAPEX) ou cloud hybride HDS (270 K€ OPEX)</p>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg-light);border-radius:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;">Sauvegarde 3-2-1</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">3 copies · 2 supports · 1 hors-site · rétention 10 ans minimum</p>
+        </div>
+      </div>
+    </div>
+    <!-- Pillar 2 -->
+    <div style="background:white;border-radius:16px;padding:32px 26px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--border);">
+      <div style="width:54px;height:54px;border-radius:12px;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 2L4 7v7c0 5.25 4.25 10.15 10 11.35C19.75 24.15 24 19.25 24 14V7L14 2z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/><path d="M9.5 14l3 3 6-6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Sécurité</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+        <div style="padding:12px 14px;background:var(--bg-light);border-radius:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;">Pseudonymisation</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Séparation stricte identité/données génomiques · Chiffrement AES-256 au repos et en transit</p>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg-light);border-radius:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;">Contrôle d'accès</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Authentification 2 facteurs · RBAC · Journal d'audit complet (AuditEvent)</p>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg-light);border-radius:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;">Tests de pénétration</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Audit annuel · CI/CD sécurisé · analyse de vulnérabilités continue</p>
+        </div>
+      </div>
+    </div>
+    <!-- Pillar 3 -->
+    <div style="background:white;border-radius:16px;padding:32px 26px;display:flex;flex-direction:column;gap:14px;border:1px solid var(--border);">
+      <div style="width:54px;height:54px;border-radius:12px;background:var(--coral);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="7" width="24" height="18" rx="3" stroke="white" stroke-width="2.5"/><path d="M9 7V5a5 5 0 0110 0v2" stroke="white" stroke-width="2.5" stroke-linecap="round"/><circle cx="14" cy="16" r="2.5" stroke="white" stroke-width="2.5"/></svg>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Gouvernance</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+        <div style="padding:12px 14px;background:var(--bg-light);border-radius:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;">Conformité RGPD</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Consentement éclairé · Registre des traitements · DPO impliqué dès la conception</p>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg-light);border-radius:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;">Autorisation CNIL</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Déclaration MR004 ou autorisation spécifique · Comité Éthique CHU · EFS</p>
+        </div>
+        <div style="padding:12px 14px;background:var(--bg-light);border-radius:8px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:4px;">Plan de continuité</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">PRA/PCA · RTO &lt; 4h · RPO &lt; 24h · Documentation complète</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     17 — ACCOMPAGNEMENT DSIO ATTENDU
+═══════════════════════════════════════════════ -->
+<section data-label="17 — Accompagnement DSIO" data-screen-label="17" data-speaker-notes="L'accompagnement DSIO est structurant : mise en place infrastructure, certification HDS, intégration SI CHU (DPI, LDAP, HL7/FHIR), compétences techniques et formation de l'équipe.">
+<div style="display:flex;flex-direction:column;height:100%;background:white;padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-small);font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase;">Systèmes d'information</span>
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:var(--navy);margin:0;line-height:1.1;">Accompagnement attendu — DSIO &amp; DRCI</h1>
+  </div>
+  <div style="display:flex;gap:48px;flex:1;">
+    <!-- Left: DSIO -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--navy);margin:0;text-transform:uppercase;letter-spacing:1px;padding-bottom:12px;border-bottom:2px solid var(--border);">DSIO — Besoins techniques</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+        <div style="padding:16px 20px;background:var(--bg-light);border-radius:8px;border-left:4px solid var(--navy);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Mise en place de l'infrastructure</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Configuration serveurs · réseau sécurisé · virtualisation · stockage distribué (cible M3)</p>
+        </div>
+        <div style="padding:16px 20px;background:var(--bg-light);border-radius:8px;border-left:4px solid var(--teal);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Certification HDS &amp; conformité SSI</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Accompagnement CNIL/RGPD · politique de sécurité SI · plan de continuité PRA/PCA</p>
+        </div>
+        <div style="padding:16px 20px;background:var(--bg-light);border-radius:8px;border-left:4px solid var(--coral);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Intégration au SI du CHU</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Connexion DPI · annuaire LDAP/AD · interfaces HL7/FHIR pour le portail clinique</p>
+        </div>
+        <div style="padding:16px 20px;background:var(--bg-light);border-radius:8px;border-left:4px solid oklch(0.52 0.13 72);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Compétences &amp; formation</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Bioinformaticien Python/Flask · admin système Linux/Docker · 35 000 € formation prévu</p>
+        </div>
+      </div>
+    </div>
+    <!-- Separator -->
+    <div style="width:1px;background:var(--border);flex-shrink:0;"></div>
+    <!-- Right: DRCI -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--navy);margin:0;text-transform:uppercase;letter-spacing:1px;padding-bottom:12px;border-bottom:2px solid var(--border);">DRCI — Accompagnement recherche</h2>
+      <div style="display:flex;flex-direction:column;gap:10px;flex:1;">
+        <div style="padding:16px 20px;background:var(--bg-light);border-radius:8px;border-left:4px solid var(--navy);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Montage du financement FEDER</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Dossier de candidature · identification des cofinancements · suivi administratif</p>
+        </div>
+        <div style="padding:16px 20px;background:var(--bg-light);border-radius:8px;border-left:4px solid var(--teal);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">PHRC-R / Appels à projets</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Soumission PHRC Régional · ANR · coordination avec la recherche clinique du CHU</p>
+        </div>
+        <div style="padding:16px 20px;background:var(--bg-light);border-radius:8px;border-left:4px solid var(--coral);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Gouvernance &amp; éthique</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Soumission CPP/CNIL · accord EFS · protocole de consentement éclairé</p>
+        </div>
+        <div style="padding:16px 20px;background:var(--bg-light);border-radius:8px;border-left:4px solid oklch(0.52 0.13 72);">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--navy);margin-bottom:4px;">Valorisation &amp; publications</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:var(--muted);margin:0;line-height:1.3;">Cible ≥ 3 articles peer-reviewed · propriété intellectuelle · valorisation CHU</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     18 — ÉQUIPE ET PROCHAINES ÉTAPES
+═══════════════════════════════════════════════ -->
+<section data-label="18 — Équipe et prochaines étapes" data-screen-label="18" data-speaker-notes="Présenter l'équipe et conclure sur les prochaines étapes : tenir la réunion DRCI+DSIO, arbitrage infrastructure, montage FEDER, démarrage phases 0 et 1.">
+<div style="display:flex;flex-direction:column;height:100%;background:var(--navy);padding:var(--pad-top) var(--pad-x) var(--pad-bot);gap:var(--gap-title);box-sizing:border-box;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+    <h1 style="font-family:'Space Grotesk',sans-serif;font-size:var(--type-title);font-weight:700;color:white;margin:0;line-height:1.1;">Équipe et prochaines étapes</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 22 410 64" fill="none" style="height:52px;flex-shrink:0;">
+      <g fill="none" stroke-width="5" stroke-linecap="round" transform="translate(18,28)">
+        <path d="M0,11 C11,1 22,1 32,11 C42,21 53,21 63,11 C71,3 79,3 84,8" stroke="rgba(255,255,255,0.45)"></path>
+        <path d="M0,11 C11,1 22,1 32,11 C42,21 53,21 63,11 C71,3 79,3 84,8" stroke="#1E6E8C" transform="translate(0,16)"></path>
+        <path d="M0,11 C11,1 22,1 32,11 C42,21 53,21 63,11 C71,3 79,3 84,8" stroke="#E8654A" transform="translate(0,32)"></path>
+        <circle cx="84" cy="8" r="2.6" fill="rgba(255,255,255,0.45)" stroke="none"></circle>
+        <circle cx="84" cy="24" r="2.6" fill="#1E6E8C" stroke="none"></circle>
+        <circle cx="84" cy="40" r="2.6" fill="#E8654A" stroke="none"></circle>
+      </g>
+      <text x="132" y="56" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="31" letter-spacing="0.2" fill="white">Génome <tspan font-weight="400">Réunion</tspan></text>
+      <text x="133" y="76" font-family="'Segoe UI',Arial,sans-serif" font-weight="600" font-size="10.5" letter-spacing="3.4" fill="rgba(255,255,255,0.4)">RÉFÉRENTIEL GÉNOMIQUE</text>
+    </svg>
+  </div>
+  <div style="display:flex;gap:48px;flex:1;">
+    <!-- Left: Team + partners -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:18px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:rgba(255,255,255,0.50);text-transform:uppercase;letter-spacing:2px;margin:0;">Équipe porteuse</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="padding:18px;background:rgba(255,255,255,0.12);border-radius:12px;border:1px solid rgba(232,101,74,0.4);grid-column:1/-1;">
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="width:44px;height:44px;border-radius:50%;background:var(--coral);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:white;flex-shrink:0;">BD</div>
+            <div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;">Pr Bérénice DORAY</div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.52);margin-top:2px;">Chef de service · Génétique Médicale · CHU de La Réunion</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:18px;background:rgba(255,255,255,0.08);border-radius:12px;border:1px solid rgba(255,255,255,0.10);">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--coral);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;margin-bottom:10px;">PM</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;">Patrick MUNIER</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.52);margin-top:4px;">Génétique moléculaire · CHU</div>
+        </div>
+        <div style="padding:18px;background:rgba(255,255,255,0.08);border-radius:12px;border:1px solid rgba(255,255,255,0.10);">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;margin-bottom:10px;">TH</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;">Dr Thomas HUBY</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.52);margin-top:4px;">Resp. génétique moléculaire</div>
+        </div>
+        <div style="padding:18px;background:rgba(255,255,255,0.08);border-radius:12px;border:1px solid rgba(255,255,255,0.10);">
+          <div style="width:44px;height:44px;border-radius:50%;background:oklch(0.52 0.13 72);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;margin-bottom:10px;">SG</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;">Susie GUILLY</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.52);margin-top:4px;">Ingénieure · Génétique moléculaire</div>
+        </div>
+        <div style="padding:18px;background:rgba(255,255,255,0.08);border-radius:12px;border:1px solid rgba(255,255,255,0.10);">
+          <div style="width:44px;height:44px;border-radius:50%;background:oklch(0.50 0.10 150);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:white;margin-bottom:10px;">FF</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;">Dr Fanny FERROUL</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.52);margin-top:4px;">Génétique Médicale · CHU</div>
+        </div>
+      </div>
+      <div style="padding:18px 22px;background:rgba(255,255,255,0.06);border-radius:10px;border:1px solid rgba(255,255,255,0.08);">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:rgba(255,255,255,0.50);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;">Partenaires clés</div>
+        <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:nowrap;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div style="background:white;border-radius:10px;padding:8px 12px;display:flex;align-items:center;justify-content:center;width:150px;height:70px;overflow:hidden;flex-shrink:0;">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" hint-size="142px,62px">
+                <image-slot id="logo-popgen" style="width:142px;height:62px;" shape="rect" placeholder="Logo POPgen" fit="contain"></image-slot>
+              </x-import>
+            </div>
+            <span style="font-family:'DM Sans',sans-serif;font-size:22px;color:rgba(255,255,255,0.65);">POPgen — WGS 350</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div style="background:white;border-radius:10px;padding:8px 12px;display:flex;align-items:center;justify-content:center;width:150px;height:70px;overflow:hidden;flex-shrink:0;">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" hint-size="142px,62px">
+                <image-slot id="logo-efs" style="width:142px;height:62px;" shape="rect" placeholder="Logo EFS" fit="contain"></image-slot>
+              </x-import>
+            </div>
+            <span style="font-family:'DM Sans',sans-serif;font-size:22px;color:rgba(255,255,255,0.65);">EFS — Donneurs volontaires</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div style="background:white;border-radius:10px;padding:8px 12px;display:flex;align-items:center;justify-content:center;width:150px;height:120px;overflow:visible;flex-shrink:0;">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" hint-size="142px,112px">
+                <image-slot id="logo-chu" style="width:142px;height:112px;" shape="rect" placeholder="Logo CHU" fit="contain"></image-slot>
+              </x-import>
+            </div>
+            <span style="font-family:'DM Sans',sans-serif;font-size:22px;color:rgba(255,255,255,0.65);">CHU de La Réunion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Separator -->
+    <div style="width:1px;background:rgba(255,255,255,0.10);flex-shrink:0;"></div>
+    <!-- Right: Next steps -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:rgba(255,255,255,0.50);text-transform:uppercase;letter-spacing:2px;margin:0;">Prochaines étapes</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;flex:1;">
+        <div style="padding:18px 22px;background:rgba(232,101,74,0.20);border-radius:10px;border:1px solid rgba(232,101,74,0.35);display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--coral);flex-shrink:0;line-height:1;margin-top:2px;">1</div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;margin-bottom:4px;">Réunion DRCI + DSIO</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.62);margin:0;line-height:1.3;">Partager la vision globale · évaluer la faisabilité · identifier les modalités d'accompagnement</p>
+          </div>
+        </div>
+        <div style="padding:18px 22px;background:rgba(255,255,255,0.07);border-radius:10px;border:1px solid rgba(255,255,255,0.10);display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--teal);flex-shrink:0;line-height:1;margin-top:2px;">2</div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;margin-bottom:4px;">Arbitrage infrastructure</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.62);margin:0;line-height:1.3;">Décision on-premise vs cloud · validation DSIO · plan déploiement cible M3</p>
+          </div>
+        </div>
+        <div style="padding:18px 22px;background:rgba(255,255,255,0.07);border-radius:10px;border:1px solid rgba(255,255,255,0.10);display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--teal);flex-shrink:0;line-height:1;margin-top:2px;">3</div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;margin-bottom:4px;">Montage dossier FEDER</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.62);margin:0;line-height:1.3;">Accompagnement DRCI · identification cofinancements · dépôt dossier</p>
+          </div>
+        </div>
+        <div style="padding:18px 22px;background:rgba(255,255,255,0.07);border-radius:10px;border:1px solid rgba(255,255,255,0.10);display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--teal);flex-shrink:0;line-height:1;margin-top:2px;">4</div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:white;margin-bottom:4px;">Démarrage Phases 0 &amp; 1</div>
+            <p style="font-family:'DM Sans',sans-serif;font-size:24px;color:rgba(255,255,255,0.62);margin:0;line-height:1.3;">Accès panels témoins · validation externe S_div · lancement recrutement EFS · M1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>
