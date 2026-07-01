@@ -22,8 +22,22 @@
 
 /* Algorithme S_div — composantes */
 .algo-component-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; flex: 1; }
+.algo-component-grid--2x2 { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 10px; flex: 1.2; }
+.algo-component-grid--2x2 .algo-component-card { padding: 14px 16px; gap: 4px; overflow: hidden; }
+.algo-component-grid--2x2 .algo-component-pct { font-size: 26px; }
+.algo-component-grid--2x2 .algo-component-name { font-size: 16px; }
+.algo-component-grid--2x2 .algo-component-tag { font-size: 13px; }
+.algo-component-grid--2x2 .algo-component-desc { font-size: 14px; line-height: 1.25; }
 .algo-component-card { background: white; border-radius: var(--r-md); padding: 20px 18px; display: flex; flex-direction: column; gap: 8px; border: 1px solid var(--border); }
 .algo-component-pct { font-family: var(--font-title); font-weight: 700; font-size: 36px; line-height: 1; }
 .algo-component-name { font-family: var(--font-title); font-weight: 700; font-size: 19px; color: var(--navy); }
 .algo-component-tag { font-family: var(--font-title); font-size: 16px; font-weight: 500; color: var(--muted); }
 .algo-component-desc { font-family: var(--font-body); font-size: 17px; color: var(--muted); line-height: 1.35; flex: 1; }
+
+/* Radar de pondération — canvas Chart.js */
+.algo-radar-wrap { flex: 1; position: relative; background: white; border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px; min-height: 0; }
+
+@media (max-width: 900px) {
+  .algo-component-grid--2x2 { grid-template-columns: 1fr; grid-template-rows: none; }
+  .algo-radar-wrap { flex: none; height: 280px; }
+}

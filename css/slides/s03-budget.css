@@ -33,21 +33,24 @@
 
 /* Scénarios et financements */
 .scenario-col { flex: 1.1; display: flex; flex-direction: column; gap: 16px; }
-.scenario-card { flex: 1; border-radius: var(--r-lg); padding: 26px; display: flex; flex-direction: column; gap: 12px; }
-.scenario-card--light { background: var(--bg-light); border: 1px solid var(--border); }
-.scenario-card--dark { background: var(--navy); }
 .scenario-label { font-family: var(--font-title); font-size: 17px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); }
-.scenario-card--dark .scenario-label { color: rgba(255, 255, 255, 0.5); }
 .scenario-total { font-family: var(--font-title); font-weight: 700; font-size: 44px; line-height: 1; color: var(--navy); }
-.scenario-card--dark .scenario-total { color: var(--coral); }
-.scenario-lines { display: flex; flex-direction: column; gap: 6px; }
-.scenario-line { display: flex; justify-content: space-between; padding: 8px 12px; background: white; border-radius: 6px; border: 1px solid var(--border); font-family: var(--font-body); font-size: 17px; color: var(--navy); }
-.scenario-card--dark .scenario-line { background: rgba(255, 255, 255, 0.08); border: none; color: rgba(255, 255, 255, 0.8); }
-.scenario-line strong { font-family: var(--font-title); font-weight: 600; color: var(--teal); }
-.scenario-card--dark .scenario-line strong { color: var(--coral); }
+
+.scenario-totals { display: flex; gap: 14px; flex-shrink: 0; }
+.scenario-total-mini { flex: 1; padding: 18px 20px; border-radius: var(--r-md); background: var(--bg-light); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+.scenario-total-mini--dark { background: var(--navy); border-color: var(--navy); }
+.scenario-total-mini--dark .scenario-label { color: rgba(255, 255, 255, 0.5); }
+.scenario-total--mini { font-size: 30px; }
+
+/* Comparatif budgétaire — canvas Chart.js */
+.scenario-chart-wrap { flex: 1; position: relative; background: white; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px 20px; min-height: 0; }
 
 .funding-col { flex: 1; display: flex; flex-direction: column; gap: 14px; }
 .funding-list { flex: 1; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
 .funding-item { padding: 18px 20px; border-radius: var(--r-md); border: 1px solid var(--border); background: var(--bg-light); }
 .funding-item-title { font-family: var(--font-title); font-weight: 700; font-size: 19px; margin-bottom: 4px; }
 .funding-item p { font-family: var(--font-body); font-size: 18px; color: var(--muted); line-height: 1.35; }
+
+@media (max-width: 900px) {
+  .scenario-chart-wrap { flex: none; height: 280px; }
+}
