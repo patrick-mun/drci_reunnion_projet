@@ -1,0 +1,29 @@
+/* Slides 05–09 — Partie 1 (suite) : Démarche scientifique
+   Objectifs · Pipeline méthodologique · Algorithme S_div · Calendrier · Modules IA
+   Familles de classes : kpi-* / pipeline-* (main.css) / algo-* / phase-* (main.css) / module-* (main.css) */
+
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; flex: 1; align-items: stretch; }
+.kpi-card {
+  border-radius: var(--r-lg);
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.kpi-card--teal { background: rgba(var(--teal-rgb), 0.3); border-color: rgba(var(--teal-rgb), 0.5); }
+.kpi-card--coral { background: rgba(var(--coral-rgb), 0.2); border-color: rgba(var(--coral-rgb), 0.4); }
+.kpi-card--ghost { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1); }
+.kpi-value { font-family: var(--font-title); font-weight: 700; font-size: 52px; color: white; line-height: 1; }
+.kpi-desc { font-family: var(--font-body); font-size: 18px; color: rgba(255, 255, 255, 0.68); line-height: 1.35; }
+.kpi-tag { font-family: var(--font-title); font-size: 16px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+
+/* Algorithme S_div — composantes */
+.algo-component-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; flex: 1; }
+.algo-component-card { background: white; border-radius: var(--r-md); padding: 20px 18px; display: flex; flex-direction: column; gap: 8px; border: 1px solid var(--border); }
+.algo-component-pct { font-family: var(--font-title); font-weight: 700; font-size: 36px; line-height: 1; }
+.algo-component-name { font-family: var(--font-title); font-weight: 700; font-size: 19px; color: var(--navy); }
+.algo-component-tag { font-family: var(--font-title); font-size: 16px; font-weight: 500; color: var(--muted); }
+.algo-component-desc { font-family: var(--font-body); font-size: 17px; color: var(--muted); line-height: 1.35; flex: 1; }

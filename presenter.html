@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mode présentation — Génome Réunion</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/presenter.css">
+</head>
+<body>
+
+<div id="pbar">
+  <div id="pbar-title"><img src="assets/logo-white.svg" alt=""> Mode présentation</div>
+  <div id="pbar-mid">
+    <span id="p-timer">00:00</span>
+    <span id="p-status">Fenêtre audience non ouverte</span>
+  </div>
+  <div id="pbar-right">
+    <button class="audience-btn" id="p-open-audience">Ouvrir la vue audience</button>
+    <button id="p-reset-timer">Réinitialiser le chrono</button>
+  </div>
+</div>
+
+<div id="p-body">
+  <div id="p-main">
+    <div id="p-main-frame-wrap">
+      <iframe id="p-main-frame" src="index.html#0" title="Diapositive courante"></iframe>
+    </div>
+    <div id="p-main-controls">
+      <button id="p-prev" aria-label="Diapositive précédente">‹</button>
+      <span id="p-main-counter">1 / 21</span>
+      <button id="p-next" aria-label="Diapositive suivante">›</button>
+    </div>
+  </div>
+  <div id="p-side">
+    <div id="p-notes">
+      <div id="p-notes-label">Notes conférencier</div>
+      <div id="p-notes-slide-title">01 — Couverture</div>
+      <div id="p-notes-text"></div>
+    </div>
+    <div id="p-divider"></div>
+    <div id="p-next">
+      <div id="p-next-label">Diapositive suivante</div>
+      <div id="p-next-frame-wrap">
+        <iframe id="p-next-frame" src="index.html#1" title="Aperçu de la diapositive suivante"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var NOTES = [
+    { label: "01 — Couverture", text: "Présenter le projet Génome Réunion : premier référentiel génomique dédié à la population réunionnaise, porté par le CHU de La Réunion." },
+    { label: "01b — Sommaire", text: "Présenter les 3 parties : contexte scientifique et méthodologie, budget et financements, systèmes d'information et accompagnement. La DSIO peut se concentrer sur les parties 2 et 3." },
+    { label: "02 — Contexte scientifique", text: "Les bases de données génomiques internationales sont dominées par des individus d'ascendance européenne. La population réunionnaise y est quasi absente, créant un biais clinique direct." },
+    { label: "03 — La singularité réunionnaise", text: "La Réunion cumule deux singularités génétiques : admixture multicontinentale ancienne et effets fondateurs régionaux. Les outils standards sont inadaptés à ce profil." },
+    { label: "04 — Impact clinique VUS", text: "Le résultat concret du biais : les patients réunionnais reçoivent plus de VUS, menant à des diagnostics erronés, de l'errance et de l'anxiété familiale." },
+    { label: "04b — Risques pharmaceutiques", text: "Les algorithmes de dosage sont calibrés sur des cohortes européennes. Les allèles CYP africains fréquents à La Réunion n'y sont pas représentés, entraînant des risques concrets de sous ou surdosage." },
+    { label: "04c — Biais IA médicaments", text: "Les modèles d'IA utilisés en drug discovery et pour les scores de risque polygénique sont entraînés sur des données euro-centrées. Cela crée des dérives systématiques dans la conception de médicaments et leur validation pour les populations non-européennes." },
+    { label: "05 — Objectifs du projet", text: "Les 4 chiffres clés : 2 500 individus génotypés, 350 WGS pris en charge par POPgen à 0€, 100 familles nucléaires, 36 mois avec 4 modules IA." },
+    { label: "06 — Pipeline méthodologique", text: "3 couches complémentaires : cohorte SNP 2500 pour la structure populationnelle, 100 familles pour le phasage, 350 WGS optimisés pour la découverte de variants. Le WGS est pris en charge par POPgen." },
+    { label: "07 — Algorithme S_div", text: "L'algorithme S_div est le cœur de la sélection des 350 WGS. Score composite pondéré, reproductible et auditable, classant les individus au sein de chaque cellule géo-ancestrale." },
+    { label: "08 — Calendrier 7 phases", text: "7 phases sur 36 mois. Phase 0-1 : préparation. Phase 2-3 : collecte et génotypage. Phase 4 : WGS POPgen. Phase 5 : modules IA. Phase 6 : portail clinique." },
+    { label: "09 — Modules IA", text: "4 modules IA qui transforment le référentiel en aide à la décision clinique recalibrée sur la population réunionnaise : pathogénicité, pharmacogénétique, admixture, PRS." },
+    { label: "10 — [Section] Budget", text: "Section Budget : postes de dépenses, 3 décisions structurantes, scénarios et financements envisagés." },
+    { label: "11 — Postes de dépenses", text: "Principal poste : ressources humaines (30%). Suivi de l'infrastructure IT et du génotypage SNP. Le WGS 350 individus est pris en charge par POPgen : 0€ pour le laboratoire." },
+    { label: "12 — 3 décisions structurantes", text: "3 décisions clés : génotypage (sous-traitance vs iScan), infrastructure IT (cloud vs on-premise), et proposition RH (stages+CDD vs alternance+CIFRE). La proposition 2 RH est recommandée." },
+    { label: "13 — Scénarios et financements", text: "Deux scénarios selon les décisions prises. Financements envisagés : FEDER, PHRC-R, partenariat POPgen, et dotations CHU." },
+    { label: "14 — [Section] Systèmes d'information", text: "Section Systèmes d'Information : infrastructure, stockage, sécurité des données, architecture pipeline et accompagnement DSIO attendu." },
+    { label: "15 — Infrastructure IT", text: "Besoins IT significatifs : serveurs HPC, stockage 200+ To, réseau sécurisé, environnement bioinformatique. Deux scénarios : on-premise 334 K€ ou cloud hybride HDS 270 K€." },
+    { label: "16 — Sécurité des données", text: "Données médicales et génomiques : exigences HDS obligatoires, conformité RGPD, pseudonymisation, chiffrement AES-256, contrôle des accès, plan de continuité." },
+    { label: "17 — Accompagnement DSIO & DRCI", text: "L'accompagnement DSIO est structurant : mise en place infrastructure, certification HDS, intégration SI CHU (DPI, LDAP, HL7/FHIR), compétences techniques et formation de l'équipe." },
+    { label: "18 — Équipe et prochaines étapes", text: "Présenter l'équipe et conclure sur les prochaines étapes : tenir la réunion DRCI+DSIO, arbitrage infrastructure, montage FEDER, démarrage phases 0 et 1." }
+  ];
+  var TOTAL = NOTES.length;
+
+  var current = 0;
+  var audienceWin = null;
+  var timerSeconds = 0;
+  var timerHandle = null;
+  var audienceCheckHandle = null;
+  var lastAudiencePing = 0;
+
+  var mainFrame = document.getElementById('p-main-frame');
+  var nextFrame = document.getElementById('p-next-frame');
+  var notesTitle = document.getElementById('p-notes-slide-title');
+  var notesText = document.getElementById('p-notes-text');
+  var counter = document.getElementById('p-main-counter');
+  var prevBtn = document.getElementById('p-prev');
+  var nextBtn = document.getElementById('p-next');
+  var statusEl = document.getElementById('p-status');
+  var timerEl = document.getElementById('p-timer');
+  var openAudienceBtn = document.getElementById('p-open-audience');
+  var resetTimerBtn = document.getElementById('p-reset-timer');
+
+  function clamp(i) { return Math.max(0, Math.min(TOTAL - 1, i)); }
+
+  function render(fromRemote) {
+    var note = NOTES[current];
+    notesTitle.textContent = note.label;
+    notesText.textContent = note.text;
+    counter.textContent = (current + 1) + ' / ' + TOTAL;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === TOTAL - 1;
+
+    if (!fromRemote) {
+      postGoto(mainFrame.contentWindow, current);
+      if (audienceWin && !audienceWin.closed) postGoto(audienceWin, current);
+    }
+
+    if (current + 1 < TOTAL) {
+      document.getElementById('p-next-frame-wrap').style.display = '';
+      postGoto(nextFrame.contentWindow, current + 1);
+    } else {
+      document.getElementById('p-next-frame-wrap').style.display = 'none';
+    }
+  }
+
+  function postGoto(win, index) {
+    if (!win) return;
+    try { win.postMessage({ type: 'deck:goto', index: index }, '*'); } catch (e) { /* noop */ }
+  }
+
+  function goTo(i, fromRemote) {
+    var n = clamp(i);
+    if (n === current) return;
+    current = n;
+    startTimerIfNeeded();
+    render(fromRemote);
+  }
+
+  prevBtn.addEventListener('click', function () { goTo(current - 1); });
+  nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); goTo(current + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); goTo(current - 1); }
+  });
+
+  // Une fois les iframes chargées, on les aligne sur l'index courant
+  mainFrame.addEventListener('load', function () { postGoto(mainFrame.contentWindow, current); });
+  nextFrame.addEventListener('load', function () { postGoto(nextFrame.contentWindow, current + 1); });
+
+  // Synchro entrante : l'audience (ou l'iframe principale) peut être navigée directement (flèches clavier)
+  window.addEventListener('message', function (e) {
+    var data = e.data;
+    if (!data || typeof data !== 'object' || data.type !== 'deck:state') return;
+    if (e.source === audienceWin) {
+      lastAudiencePing = Date.now();
+      setStatus(true);
+      if (data.index !== current) goTo(data.index, true);
+    } else if (e.source === mainFrame.contentWindow) {
+      if (data.index !== current) goTo(data.index, true);
+    }
+  });
+
+  function setStatus(ok) {
+    statusEl.textContent = ok ? 'Audience connectée' : 'Fenêtre audience non ouverte';
+    statusEl.classList.toggle('ok', ok);
+  }
+
+  openAudienceBtn.addEventListener('click', function () {
+    if (audienceWin && !audienceWin.closed) {
+      audienceWin.focus();
+      return;
+    }
+    audienceWin = window.open('index.html#' + current, 'genome_reunion_audience');
+    lastAudiencePing = Date.now();
+    if (audienceCheckHandle) clearInterval(audienceCheckHandle);
+    audienceCheckHandle = setInterval(function () {
+      if (!audienceWin || audienceWin.closed) { setStatus(false); return; }
+      setStatus(Date.now() - lastAudiencePing < 5000);
+    }, 2000);
+  });
+
+  // Chronomètre conférencier
+  function startTimerIfNeeded() {
+    if (timerHandle) return;
+    timerHandle = setInterval(function () {
+      timerSeconds++;
+      var m = Math.floor(timerSeconds / 60), s = timerSeconds % 60;
+      timerEl.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    }, 1000);
+  }
+  resetTimerBtn.addEventListener('click', function () {
+    timerSeconds = 0;
+    timerEl.textContent = '00:00';
+  });
+
+  // Séparateur redimensionnable notes / aperçu, taille persistée
+  var divider = document.getElementById('p-divider');
+  var notesPane = document.getElementById('p-notes');
+  var nextPane = document.getElementById('p-next');
+  var dragging = false;
+
+  var savedRatio = parseFloat(localStorage.getItem('genome-reunion-presenter-ratio'));
+  if (savedRatio && savedRatio > 0.15 && savedRatio < 0.85) applyRatio(savedRatio);
+
+  function applyRatio(ratio) {
+    notesPane.style.flex = '1 1 ' + (ratio * 100) + '%';
+    nextPane.style.flex = '1 1 ' + ((1 - ratio) * 100) + '%';
+  }
+
+  divider.addEventListener('mousedown', function () { dragging = true; document.body.style.cursor = 'row-resize'; });
+  window.addEventListener('mouseup', function () {
+    if (!dragging) return;
+    dragging = false;
+    document.body.style.cursor = '';
+  });
+  window.addEventListener('mousemove', function (e) {
+    if (!dragging) return;
+    var side = document.getElementById('p-side');
+    var rect = side.getBoundingClientRect();
+    var ratio = clampRatio((e.clientY - rect.top) / rect.height);
+    applyRatio(ratio);
+    localStorage.setItem('genome-reunion-presenter-ratio', ratio);
+  });
+  function clampRatio(r) { return Math.max(0.2, Math.min(0.8, r)); }
+
+  setStatus(false);
+  render(false);
+})();
+</script>
+</body>
+</html>

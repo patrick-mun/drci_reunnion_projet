@@ -1,0 +1,80 @@
+/* Slides 02–04c — Partie 1 : L'angle mort
+   Contexte scientifique · Singularité réunionnaise · Impact clinique VUS ·
+   Pharmacogénétique · Biais IA médicaments
+   Familles de classes : bias-* / singularity-* / clinical-* / pharma-* / ai-* */
+
+.bias-stat-grid { display: flex; flex-direction: column; gap: 12px; }
+.bias-consequence-title { margin-bottom: 4px; }
+.bias-consequence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex: 1; }
+.bias-consequence-grid .card { padding: 16px 18px; }
+.bias-consequence-grid .card--coral .card-title { color: var(--coral); }
+
+/* Singularité — barres de composition ancestrale */
+.singularity-cards { display: flex; flex-direction: column; gap: 16px; height: 100%; }
+.singularity-cards .card { flex: 1; justify-content: center; padding: 22px 26px; }
+.singularity-cards .card-kicker { margin-bottom: 8px; }
+
+.ancestry-bars { display: flex; flex-direction: column; gap: 14px; flex: 1; justify-content: center; }
+.ancestry-row { display: flex; align-items: center; gap: 14px; }
+.ancestry-label { font-family: var(--font-body); font-size: 18px; color: var(--navy); width: 160px; flex-shrink: 0; }
+.ancestry-track { flex: 1; height: 24px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.ancestry-fill { height: 100%; }
+.ancestry-pct { font-family: var(--font-title); font-size: 18px; font-weight: 700; width: 46px; text-align: right; flex-shrink: 0; }
+
+/* Impact clinique — comparatif européen / réunionnais */
+.clinical-compare { display: flex; gap: 28px; flex: 1; align-items: stretch; }
+.clinical-panel {
+  flex: 1;
+  background: white;
+  border-radius: var(--r-lg);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 2px solid var(--border);
+  position: relative;
+}
+.clinical-panel::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  background: var(--teal);
+}
+.clinical-panel--coral { border-color: oklch(0.85 0.06 30); }
+.clinical-panel--coral::before { background: var(--coral); }
+.clinical-kicker { font-family: var(--font-title); font-size: 17px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
+.clinical-headline { font-family: var(--font-title); font-size: 36px; font-weight: 700; color: var(--teal); }
+.clinical-panel--coral .clinical-headline { color: var(--coral); }
+.clinical-body { font-family: var(--font-body); font-size: 19px; line-height: 1.55; color: var(--ink); }
+.clinical-list { display: flex; flex-direction: column; gap: 8px; }
+.clinical-list .callout { padding: 10px 14px; }
+.clinical-list .callout p { font-family: var(--font-body); font-size: 18px; color: var(--ink); line-height: 1.35; }
+.clinical-result { margin-top: auto; padding: 14px; border-radius: var(--r-sm); font-family: var(--font-title); font-weight: 700; font-size: 18px; }
+.clinical-result--ok { background: oklch(0.95 0.04 160); color: oklch(0.40 0.15 150); }
+.clinical-result--bad { background: oklch(0.95 0.04 30); color: var(--coral); }
+.clinical-vs { display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-size: 26px; color: var(--muted); flex-shrink: 0; width: 40px; }
+
+/* Pharmacogénétique */
+.pharma-allele-list { display: flex; flex-direction: column; gap: 6px; }
+.pharma-allele-row { display: flex; align-items: center; gap: 12px; padding: 9px 12px; }
+.pharma-allele-name { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); width: 78px; flex-shrink: 0; }
+.pharma-consequence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; }
+.pharma-consequence-grid .card { padding: 12px 14px; gap: 5px; }
+.pharma-consequence-value { font-family: var(--font-title); font-weight: 700; font-size: 25px; line-height: 1; }
+
+/* Biais IA médicaments — chaîne de propagation */
+.ai-chain { display: flex; flex-direction: column; flex: 1; }
+.ai-chain-step { padding: 11px 14px; background: white; border: 1px solid var(--border); }
+.ai-chain-step:first-child { border-radius: var(--r-sm) var(--r-sm) 0 0; border-bottom: none; }
+.ai-chain-step:nth-child(3) { border-top: none; border-bottom: none; }
+.ai-chain-step:last-child { border-radius: 0 0 var(--r-sm) var(--r-sm); border-top: none; }
+.ai-chain-step-title { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 2px; }
+.ai-chain-link { display: flex; justify-content: center; height: 16px; background: white; border-left: 1px solid var(--border); border-right: 1px solid var(--border); align-items: center; }
+.ai-chain-link-bar { width: 2px; height: 100%; background: var(--coral); }
+.ai-drift-list { display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: center; }
+.ai-drift-item { padding: 10px 14px; background: white; border-radius: var(--r-sm); border: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
+.ai-drift-num { width: 26px; height: 26px; border-radius: 7px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-size: 15px; font-weight: 700; color: white; margin-top: 2px; }
+.ai-drift-item h3 { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 2px; }
+.ai-drift-item p { font-family: var(--font-body); font-size: 16px; color: var(--muted); line-height: 1.3; }

@@ -1,0 +1,85 @@
+/* presenter.css — Mode présentation deux-écrans */
+
+* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #14212C;
+  color: #E8ECEF;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#pbar {
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: #0F3A56;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+#pbar-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; color: white; display: flex; align-items: center; gap: 10px; }
+#pbar-title img { height: 22px; }
+#pbar-mid { display: flex; align-items: center; gap: 18px; }
+#p-timer { font-family: 'Space Grotesk', sans-serif; font-variant-numeric: tabular-nums; font-size: 15px; color: #7AB5CC; }
+#p-status { font-size: 13px; color: #E8654A; }
+#p-status.ok { color: #4CC38A; }
+#pbar-right { display: flex; align-items: center; gap: 10px; }
+#pbar button, .audience-btn {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 6px 16px;
+  cursor: pointer;
+}
+#pbar button:hover, .audience-btn:hover { background: rgba(255, 255, 255, 0.16); }
+#pbar button:disabled { opacity: 0.35; cursor: default; }
+
+#p-body { flex: 1; display: grid; grid-template-columns: 1fr 420px; min-height: 0; }
+
+#p-main { position: relative; background: #0B1620; display: flex; flex-direction: column; min-height: 0; }
+#p-main-frame-wrap { flex: 1; position: relative; min-height: 0; }
+#p-main-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+#p-main-controls { flex-shrink: 0; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 10px; background: #0F3A56; }
+#p-main-controls button {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  cursor: pointer;
+}
+#p-main-controls button:hover { background: rgba(255, 255, 255, 0.18); }
+#p-main-controls button:disabled { opacity: 0.3; cursor: default; }
+#p-main-counter { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #7AB5CC; min-width: 70px; text-align: center; }
+
+#p-side { display: flex; flex-direction: column; border-left: 1px solid rgba(255, 255, 255, 0.08); min-height: 0; }
+
+#p-notes { flex: 1 1 55%; overflow-y: auto; padding: 22px; min-height: 0; }
+#p-notes-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #7AB5CC; margin-bottom: 8px; }
+#p-notes-slide-title { font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 700; color: white; margin-bottom: 14px; }
+#p-notes-text { font-size: 17px; line-height: 1.6; color: #C8D1D8; }
+
+#p-divider { height: 6px; flex-shrink: 0; cursor: row-resize; background: rgba(255, 255, 255, 0.05); }
+#p-divider:hover { background: rgba(255, 255, 255, 0.12); }
+
+#p-next { flex: 1 1 45%; display: flex; flex-direction: column; min-height: 0; padding: 16px 22px 22px; }
+#p-next-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #6A7178; margin-bottom: 8px; }
+#p-next-frame-wrap { flex: 1; position: relative; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); background: #0B1620; min-height: 0; }
+#p-next-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+#p-next-empty { display: flex; align-items: center; justify-content: center; height: 100%; color: #6A7178; font-size: 14px; }
+
+@media (max-width: 900px) {
+  #p-body { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+  #p-side { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+}
