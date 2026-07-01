@@ -1,11 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 160" role="img" aria-label="CHU de La Réunion">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 170" role="img" aria-label="CHU de La Réunion">
   <defs>
-    <linearGradient id="chuBlue" x1="0" y1="0" x2="1" y2="0.3">
+    <linearGradient id="chuBlue" x1="0" y1="0" x2="1" y2="0.15">
       <stop offset="0" stop-color="#0B3D6B"/>
-      <stop offset="1" stop-color="#29A8E0"/>
+      <stop offset="0.55" stop-color="#1C7FC4"/>
+      <stop offset="1" stop-color="#3FC1E9"/>
+    </linearGradient>
+    <linearGradient id="chuSwoosh" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0B3D6B"/>
+      <stop offset="1" stop-color="#7FD8F2"/>
     </linearGradient>
   </defs>
-  <text x="210" y="72" font-family="'Arial',sans-serif" font-weight="800" font-size="72" letter-spacing="1" fill="url(#chuBlue)" text-anchor="middle">CHU</text>
-  <text x="210" y="98" font-family="'Arial',sans-serif" font-weight="600" font-size="15" letter-spacing="1.5" fill="#0B3D6B" text-anchor="middle">CENTRE HOSPITALIER UNIVERSITAIRE</text>
-  <text x="210" y="132" font-family="'Arial',sans-serif" font-weight="800" font-size="30" letter-spacing="1" fill="#0B3D6B" text-anchor="middle">LA RÉUNION</text>
+  <text x="210" y="76" font-family="'Arial',sans-serif" font-weight="800" font-size="78" letter-spacing="0.5" fill="url(#chuBlue)" text-anchor="middle">CHU</text>
+  <path d="M95 68 C130 84 165 84 210 66 C250 50 285 42 325 32" fill="none" stroke="url(#chuSwoosh)" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+  <path d="M95 68 C130 84 165 84 210 66 C250 50 285 42 325 32" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+  <text x="210" y="104" font-family="'Arial',sans-serif" font-weight="500" font-size="14" letter-spacing="1.8" fill="#2C8FCB" text-anchor="middle">CENTRE HOSPITALIER UNIVERSITAIRE</text>
+  <line x1="30" y1="140" x2="110" y2="140" stroke="#0B3D6B" stroke-width="4"/>
+  <text x="210" y="148" font-family="'Arial',sans-serif" font-weight="800" font-size="32" letter-spacing="1" fill="#0B3D6B" text-anchor="middle">LA RÉUNION</text>
+  <line x1="310" y1="140" x2="390" y2="140" stroke="#0B3D6B" stroke-width="4"/>
 </svg>

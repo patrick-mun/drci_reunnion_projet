@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="EFS — Établissement Français du Sang, du donneur aux patients">
   <circle cx="150" cy="150" r="142" fill="none" stroke="#0B3D6B" stroke-width="3"/>
-  <path d="M62 96 C90 60 122 46 150 46 C178 46 210 60 238 96" fill="none" stroke="#0B3D6B" stroke-width="3"/>
-  <path d="M70 100 L82 82 L94 100 Z" fill="#C6282E"/>
-  <path d="M206 100 L218 82 L230 100 Z" fill="#C6282E"/>
-  <text x="150" y="128" font-family="'Arial',sans-serif" font-weight="800" font-size="58" letter-spacing="2" fill="#0B3D6B" text-anchor="middle">EFS</text>
+  <path d="M82 96 C96 56 122 40 150 40 C178 40 204 56 218 96" fill="none" stroke="#0B3D6B" stroke-width="3"/>
+  <path d="M70 100 L82 80 L94 100 Z" fill="#C6282E"/>
+  <path d="M206 100 L218 80 L230 100 Z" fill="#C6282E"/>
+  <text x="150" y="130" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="60" letter-spacing="1" fill="#0B3D6B" text-anchor="middle">EFS</text>
   <line x1="70" y1="152" x2="230" y2="152" stroke="#C6282E" stroke-width="3"/>
   <text x="150" y="172" font-family="'Arial',sans-serif" font-weight="700" font-size="13" letter-spacing="0.8" fill="#0B3D6B" text-anchor="middle">ÉTABLISSEMENT FRANÇAIS DU SANG</text>
-  <text x="150" y="208" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="24" fill="#C6282E" text-anchor="middle">Du donneur</text>
-  <text x="150" y="234" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="24" fill="#C6282E" text-anchor="middle">aux patients</text>
+  <text x="150" y="212" font-family="'Brush Script MT', 'Segoe Script', cursive" font-weight="700" font-size="30" fill="#C6282E" text-anchor="middle">Du donneur</text>
+  <text x="150" y="248" font-family="'Brush Script MT', 'Segoe Script', cursive" font-weight="700" font-size="30" fill="#C6282E" text-anchor="middle">aux patients</text>
 </svg>
