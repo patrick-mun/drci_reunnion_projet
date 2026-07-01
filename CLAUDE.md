@@ -28,7 +28,6 @@ Règles de travail détaillées dans `AGENTS.md`.
 | `js/vendor/chart.umd.js` | Chart.js 4.4.6 vendorisé (build UMD, récupéré via `npm pack`, pas de CDN) |
 | `assets/logo.svg` / `assets/logo-white.svg` | Logo Génome Réunion (variante navy pour fonds clairs / variante blanche pour fonds navy·teal) |
 | `assets/favicon.svg` | Favicon |
-| `assets/partners/logo-popgen.svg`, `logo-efs.svg`, `logo-chu-reunion.svg` | Logos des 3 partenaires clés (slide 20) — recréations SVG maison (fichiers officiels non transmissibles dans cet environnement), à remplacer par les fichiers de marque officiels dès qu'ils sont disponibles |
 | `AGENTS.md` | Règles de travail (contenu, CSS, commits, conventions de nommage) |
 | `CLAUDE.md` | Index technique du projet (ce fichier) |
 | `README.md` | Guide utilisateur et architecture |

@@ -11,7 +11,7 @@
 
 .partners-block { padding: 16px 20px; background: rgba(255, 255, 255, 0.06); border-radius: var(--r-md); border: 1px solid rgba(255, 255, 255, 0.08); }
 .partners-title { font-family: var(--font-title); font-size: 16px; font-weight: 600; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-.partners-row { display: flex; gap: 14px; }
+.partners-row { display: flex; gap: 10px; }
 .partner-block { display: flex; flex-direction: column; align-items: center; gap: 6px; }
 
 .next-steps-list { display: flex; flex-direction: column; gap: 10px; flex: 1; }
