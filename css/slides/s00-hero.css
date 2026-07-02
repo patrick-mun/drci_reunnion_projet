@@ -65,7 +65,16 @@
   font-family: var(--font-body);
   font-size: 18px;
   color: rgba(255, 255, 255, 0.42);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 22px;
+  position: relative;
+}
+.hero-team::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
 }
 .hero-team-version { margin-left: auto; }
