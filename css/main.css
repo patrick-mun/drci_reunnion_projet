@@ -180,10 +180,16 @@ img, svg { display: block; max-width: 100%; }
   background: var(--navy);
 }
 
+/* Scène fixe 1920×1080 mise à l'échelle par transform: scale() —
+   garantit un rendu WYSIWYG identique sur tout écran (letterbox autour). */
 #deck {
-  height: 100%;
-  width: 100%;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%) scale(var(--deck-scale, 1));
+  transform-origin: center center;
 }
 
 .slide {
@@ -500,18 +506,10 @@ h2.block-title {
 
 /* ─── 9. Responsive ────────────────────────────────────────── */
 @media (max-width: 900px) {
+  /* Seule la chrome de nav s'adapte : le contenu du deck ne se réagence plus,
+     la scène fixe 1920×1080 est simplement mise à l'échelle (WYSIWYG). */
   #nav-center { display: none; }
   #burger { display: flex; }
-  .slide-pad { padding: 44px 32px 32px; gap: 20px; }
-  .slide-cols { flex-direction: column; gap: 20px; }
-  .slide-sep { display: none; }
-  .slide-title { font-size: 34px; }
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .gantt-wrap { min-height: 320px; }
-  .pipeline { flex-direction: column; }
-  .pipeline-arrow { display: none; }
-  .pipeline-step:first-child, .pipeline-step:last-child { border-radius: 16px; }
-  .section-title { font-size: 42px; }
 }
 
 #mobile-menu {
