@@ -75,7 +75,7 @@
 .ai-chain-step-title { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 2px; }
 .ai-chain-link { display: flex; justify-content: center; height: 16px; background: white; border-left: 1px solid var(--border); border-right: 1px solid var(--border); align-items: center; }
 .ai-chain-link-bar { width: 2px; height: 100%; background: var(--coral); }
-.ai-drift-list { display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: center; }
+.ai-drift-list { display: flex; flex-direction: column; gap: 14px; flex: 1; justify-content: center; }
 .ai-drift-item { padding: 10px 14px; background: white; border-radius: var(--r-sm); border: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
 .ai-drift-num { width: 26px; height: 26px; border-radius: 7px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-size: 15px; font-weight: 700; color: white; margin-top: 2px; }
 .ai-drift-item h3 { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 2px; }
