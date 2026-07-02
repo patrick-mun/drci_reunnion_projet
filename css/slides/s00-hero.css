@@ -69,6 +69,3 @@
   padding-top: 22px;
 }
 .hero-team-version { margin-left: auto; }
-
-/* Sommaire */
-.toc-footer { font-family: var(--font-body); font-size: 17px; color: var(--muted); font-style: italic; }
