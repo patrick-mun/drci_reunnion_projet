@@ -136,7 +136,7 @@ dans le deck.
 | `--navy` | #0F3A56 | Fond principal sombre, texte principal, titres |
 | `--teal` | #1E6E8C | Accent primaire, section Systèmes d'information |
 | `--coral` | #E8654A | Accent alerte / mise en évidence, section Budget |
-| `--bg-light` | #F4F1EA | Fond slides neutres (« cream ») |
+| `--bg-light` | #FBFAF7 | Fond slides neutres (« cream ») |
 | `--muted` | #6A7178 | Texte secondaire |
 | `--border` | #D8D2C6 | Bordures |
 | `--ink` | #2A3A48 | Texte de corps sur fond clair |

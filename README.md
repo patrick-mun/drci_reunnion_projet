@@ -63,7 +63,7 @@ la DRCI et la DSIO.
 Charte graphique reprise du prototype de design haute-fidélité fourni (`design_handoff_genome_reunion/`,
 généré avec Claude Design) :
 
-- **Couleurs** : navy `#0F3A56`, teal `#1E6E8C`, coral `#E8654A`, fond clair `#F4F1EA`
+- **Couleurs** : navy `#0F3A56`, teal `#1E6E8C`, coral `#E8654A`, fond clair `#FBFAF7`
 - **Typographie** : Space Grotesk (titres, chiffres clés) + DM Sans (corps de texte)
 - **Composants** : cards, grilles, callouts, barres de progression, formule mise en avant, timeline,
   sommaire numéroté — voir `CLAUDE.md` pour le détail des classes CSS
