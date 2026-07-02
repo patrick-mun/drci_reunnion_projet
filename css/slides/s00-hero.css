@@ -11,8 +11,11 @@
   position: absolute;
   right: -40px; top: 0; bottom: 0;
   width: 480px;
-  opacity: 0.06;
+  opacity: 0.15;
   pointer-events: none;
+}
+.section-waves {
+  opacity: 0.15;
 }
 .hero-accent-bar {
   position: absolute;
