@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="Génome Réunion — Référentiel génomique" height="72">
+</p>
+
 # Génome Réunion — Réunion de présentation DRCI &amp; DSIO
 
 Présentation HTML/CSS/JS statique du projet **Génome Réunion** — premier référentiel génomique dédié à la

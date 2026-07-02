@@ -17,7 +17,7 @@ Règles de travail détaillées dans `AGENTS.md`.
 | `presenter.html` | Mode présentation deux-écrans : slide courante (iframe, gauche) + notes + aperçu slide suivante (droite), synchro par `postMessage`, fenêtre audience séparée |
 | `css/main.css` | Variables de design, reset, navigation fixe, mécanique du deck (fade + `is-active`), typographie, composants transversaux (card, grid, callout, formule, sommaire, pipeline, timeline, modules, équipe), responsive, menu mobile |
 | `css/presenter.css` | Styles dédiés à `presenter.html` (barre outils, timer, panneaux notes/aperçu, séparateur redimensionnable) |
-| `css/slides/s00-hero.css` | Slides 0–1 — couverture, sommaire |
+| `css/slides/s00-hero.css` | Slides 0–1 — couverture, sommaire ; vagues animées `.hero-waves` (réutilisées par les slides de section 12 &amp; 16) |
 | `css/slides/s01-contexte.css` | Slides 2–6 — contexte scientifique, singularité réunionnaise, impact clinique VUS, pharmacogénétique, biais IA médicaments |
 | `css/slides/s02-methodologie.css` | Slides 7–11 — objectifs, pipeline méthodologique, algorithme S_div, calendrier, modules IA |
 | `css/slides/s03-budget.css` | Slides 12–15 — section budget, postes de dépenses, 3 décisions structurantes, scénarios &amp; financements |
@@ -37,7 +37,7 @@ Règles de travail détaillées dans `AGENTS.md`.
 
 | Idx | Titre | Partie | Fond | Notes |
 |---|---|---|---|---|
-| 0 | Couverture | — | `slide--navy` | Titre, équipe porteuse, version |
+| 0 | Couverture | — | `slide--navy` | Titre, équipe porteuse, vagues animées `.hero-waves` |
 | 1 | Sommaire | — | `slide--white` | 3 blocs numérotés, plages de slides |
 | 2 | Contexte scientifique | 1 · Contexte | `slide--white` | Sous-représentation génomique, 96 % / 1,1 % |
 | 3 | La singularité réunionnaise | 1 · Contexte | `slide--white` | Admixture multicontinentale + effet fondateur, **donut Chart.js** `#ancestryChart` |
@@ -121,7 +121,7 @@ dans le deck.
 
 | Famille | Préfixe | Fichier |
 |---|---|---|
-| Hero / Sommaire | `hero-*` / `toc-*` | s00-hero.css / main.css |
+| Hero / Sommaire | `hero-*` / `toc-*` / `wave-row` · `wave-1/2/3` (vagues animées `@keyframes wave-pan`) | s00-hero.css / main.css |
 | Contexte scientifique | `bias-*` / `singularity-*` / `ancestry-*` / `clinical-*` / `pharma-*` / `ai-*` | s01-contexte.css |
 | Méthodologie | `kpi-*` / `pipeline-*` / `algo-*` / `phase-*` / `module-*` | s02-methodologie.css + main.css |
 | Budget | `budget-*` / `decision-*` / `scenario-*` / `funding-*` | s03-budget.css |
