@@ -53,7 +53,7 @@ Règles de travail détaillées dans `AGENTS.md`.
 | 13 | Postes de dépenses | 2 · Budget | `slide--white` | Barres horizontales, total 1 709 000 € |
 | 14 | 3 décisions structurantes | 2 · Budget | `slide--cream` | Génotypage / infrastructure / RH |
 | 15 | Scénarios et financements | 2 · Budget | `slide--white` | Optimal vs Maximal, **barres groupées Chart.js** `#scenarioChart` + 4 sources de financement |
-| 16 | [Section] Systèmes d'information | 3 · SI | `slide--teal` | Slide intercalaire |
+| 16 | [Section] Systèmes d'information | 3 · SI | `slide--navy` | Slide intercalaire |
 | 17 | Infrastructure IT | 3 · SI | `slide--white` | Calcul &amp; stockage / réseau &amp; logiciels |
 | 18 | Sécurité des données | 3 · SI | `slide--cream` | 3 piliers : hébergement, sécurité, gouvernance |
 | 19 | Accompagnement DSIO &amp; DRCI | 3 · SI | `slide--white` | 2 colonnes de besoins/accompagnement |
