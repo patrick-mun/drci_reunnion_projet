@@ -30,9 +30,9 @@
   height: 100%;
   display: block;
 }
-.wave-1 { animation: wave-pan 20s linear infinite; opacity: .6; }
-.wave-2 { animation: wave-pan 14s linear infinite reverse; opacity: .45; }
-.wave-3 { animation: wave-pan 9s linear infinite; opacity: .2; }
+.wave-1 { animation: wave-pan 32s linear infinite; opacity: .6; }
+.wave-2 { animation: wave-pan 22s linear infinite reverse; opacity: .45; }
+.wave-3 { animation: wave-pan 15s linear infinite; opacity: .2; }
 @keyframes wave-pan {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
