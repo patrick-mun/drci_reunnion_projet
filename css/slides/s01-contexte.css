@@ -59,7 +59,7 @@
 .clinical-vs { display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-size: 26px; color: var(--muted); flex-shrink: 0; width: 40px; }
 
 /* Pharmacogénétique */
-.pharma-allele-list { display: flex; flex-direction: column; gap: 6px; }
+.pharma-allele-list { display: flex; flex-direction: column; gap: 6px; margin-top: 24px; }
 .pharma-allele-row { display: flex; align-items: center; gap: 12px; padding: 9px 12px; }
 .pharma-allele-name { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); width: 78px; flex-shrink: 0; }
 .pharma-consequence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; }
