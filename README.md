@@ -2,6 +2,10 @@
   <img src="assets/logo.svg" alt="Génome Réunion — Référentiel génomique" height="72">
 </p>
 
+<p align="center">
+  <strong>▶ <a href="https://patrick-mun.github.io/drci_reunnion_projet/">Voir la présentation en ligne</a></strong>
+</p>
+
 # Génome Réunion — Réunion de présentation DRCI &amp; DSIO
 
 Présentation HTML/CSS/JS statique du projet **Génome Réunion** — premier référentiel génomique dédié à la
