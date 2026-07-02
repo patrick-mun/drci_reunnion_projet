@@ -16,17 +16,7 @@
   var mobileMenu = document.getElementById('mobile-menu');
   var pills = Array.prototype.slice.call(document.querySelectorAll('.sec-pill'));
 
-  var deckViewport = document.getElementById('deck-viewport');
-
   var current = 0;
-
-  // Mise à l'échelle de la scène fixe 1920×1080 pour un rendu WYSIWYG.
-  var SCENE_W = 1920, SCENE_H = 1080;
-  function fitDeck() {
-    if (!deck || !deckViewport) return;
-    var scale = Math.min(deckViewport.clientWidth / SCENE_W, deckViewport.clientHeight / SCENE_H);
-    deck.style.setProperty('--deck-scale', scale);
-  }
 
   function clamp(i) { return Math.max(0, Math.min(total - 1, i)); }
 
@@ -125,16 +115,6 @@
     if (Math.abs(dx) > 60) { dx < 0 ? next() : prev(); }
     touchStartX = null;
   }, { passive: true });
-
-  // Mise à l'échelle : au chargement, au redimensionnement et sur rotation.
-  fitDeck();
-  if ('ResizeObserver' in window && deckViewport) {
-    new ResizeObserver(fitDeck).observe(deckViewport);
-  } else {
-    window.addEventListener('resize', fitDeck);
-  }
-  window.addEventListener('orientationchange', fitDeck);
-  window.addEventListener('load', fitDeck);
 
   // Point d'entrée : hash d'URL (#12) permet le deep-link, utilisé par presenter.html
   var initial = parseInt(location.hash.replace('#', ''), 10);

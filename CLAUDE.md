@@ -15,7 +15,7 @@ Règles de travail détaillées dans `AGENTS.md`.
 |---|---|
 | `index.html` | Les 21 slides (source unique de vérité) |
 | `presenter.html` | Mode présentation deux-écrans : slide courante (iframe, gauche) + notes + aperçu slide suivante (droite), synchro par `postMessage`, fenêtre audience séparée |
-| `css/main.css` | Variables de design, reset, navigation fixe, mécanique du deck (fade + `is-active`), **scène fixe 1920×1080 mise à l'échelle par `transform: scale(var(--deck-scale))`** (WYSIWYG, letterbox navy), typographie, composants transversaux (card, grid, callout, formule, sommaire, pipeline, timeline, modules, équipe), responsive, menu mobile |
+| `css/main.css` | Variables de design, reset, navigation fixe, mécanique du deck (fade + `is-active`), typographie, composants transversaux (card, grid, callout, formule, sommaire, pipeline, timeline, modules, équipe), responsive, menu mobile |
 | `css/presenter.css` | Styles dédiés à `presenter.html` (barre outils, timer, panneaux notes/aperçu, séparateur redimensionnable) |
 | `css/slides/s00-hero.css` | Slides 0–1 — couverture, sommaire ; vagues animées `.hero-waves` (réutilisées par les slides de section 12 &amp; 16) |
 | `css/slides/s01-contexte.css` | Slides 2–6 — contexte scientifique, singularité réunionnaise, impact clinique VUS, pharmacogénétique, biais IA médicaments |
@@ -23,7 +23,7 @@ Règles de travail détaillées dans `AGENTS.md`.
 | `css/slides/s03-budget.css` | Slides 12–15 — section budget, postes de dépenses, 3 décisions structurantes, scénarios &amp; financements |
 | `css/slides/s04-si.css` | Slides 16–19 — section SI, infrastructure IT, sécurité des données, accompagnement DSIO &amp; DRCI |
 | `css/slides/s05-equipe.css` | Slide 20 — équipe et prochaines étapes |
-| `js/app.js` | Navigation (clavier, tactile, boutons), barre de progression, compteur, pastilles de section actives, menu burger mobile, synchro `postMessage` avec `presenter.html`, mise à l'échelle de la scène fixe (`fitDeck()` + `ResizeObserver`) |
+| `js/app.js` | Navigation (clavier, tactile, boutons), barre de progression, compteur, pastilles de section actives, menu burger mobile, synchro `postMessage` avec `presenter.html` |
 | `js/charts.js` | Initialisation des 4 graphiques Chart.js (donut ancestral slide 3, radar S_div slide 9, Gantt calendrier slide 10, comparatif budgétaire slide 15) |
 | `js/vendor/chart.umd.js` | Chart.js 4.4.6 vendorisé (build UMD, récupéré via `npm pack`, pas de CDN) |
 | `assets/logo.svg` / `assets/logo-white.svg` | Logo Génome Réunion (variante navy pour fonds clairs / variante blanche pour fonds navy·teal) |
