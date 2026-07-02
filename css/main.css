@@ -321,6 +321,7 @@ h2.block-title {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 .card--white { background: white; }
 .card--coral { background: oklch(0.97 0.02 30); border-color: oklch(0.88 0.06 30); }
