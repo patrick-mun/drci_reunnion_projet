@@ -51,7 +51,7 @@ Règles de travail détaillées dans `AGENTS.md`.
 | 10 | Calendrier 7 phases | 1 · Contexte | `slide--white` | **Gantt Chart.js** `#calendarGanttChart` (7 phases sur 36 mois) + jalons |
 | 11 | Modules IA | 1 · Contexte | `slide--white` | Grid 2×2 des 4 modules cliniques |
 | 12 | PCA globale | 1 · Contexte | `slide--cream` | Preuve visuelle, cohorte pilote (n=75) vs 1000 Genomes, **scatter Chart.js** `#pcaScatterChart` |
-| 13 | [Section] Budget | 2 · Budget | `slide--navy` | Slide intercalaire, 2 scénarios chiffrés |
+| 13 | [Section] Budget | 2 · Budget | `slide--navy` | Slide intercalaire, budget estimé (scénario Maximal) |
 | 14 | Postes de dépenses | 2 · Budget | `slide--white` | Barres horizontales, total 1 709 000 € |
 | 15 | 3 décisions structurantes | 2 · Budget | `slide--cream` | Génotypage / infrastructure / RH |
 | 16 | Scénarios et financements | 2 · Budget | `slide--white` | Optimal vs Maximal, **barres groupées Chart.js** `#scenarioChart` + 4 sources de financement |
