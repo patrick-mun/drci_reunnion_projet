@@ -23,13 +23,13 @@
   <div id="nav-center">
     <button class="sec-pill" data-goto="0">Accueil</button>
     <button class="sec-pill" data-goto="2">01 · Contexte scientifique</button>
-    <button class="sec-pill" data-goto="12">02 · Budget</button>
-    <button class="sec-pill" data-goto="16">03 · Systèmes d'information</button>
+    <button class="sec-pill" data-goto="13">02 · Budget</button>
+    <button class="sec-pill" data-goto="17">03 · Systèmes d'information</button>
   </div>
   <div id="nav-right">
     <a class="presenter-link" href="presenter.html" target="_blank" rel="noopener">Mode présentation</a>
     <button class="nbtn" id="bp" aria-label="Diapositive précédente">‹</button>
-    <span id="ctr" aria-live="polite">1 / 21</span>
+    <span id="ctr" aria-live="polite">1 / 22</span>
     <button class="nbtn" id="bn" aria-label="Diapositive suivante">›</button>
     <button id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -38,8 +38,8 @@
 <div id="mobile-menu">
   <button class="sec-pill" data-goto="0">Accueil</button>
   <button class="sec-pill" data-goto="2">01 · Contexte scientifique</button>
-  <button class="sec-pill" data-goto="12">02 · Budget</button>
-  <button class="sec-pill" data-goto="16">03 · Systèmes d'information</button>
+  <button class="sec-pill" data-goto="13">02 · Budget</button>
+  <button class="sec-pill" data-goto="17">03 · Systèmes d'information</button>
 </div>
 
 <div id="prog"><div id="pf"></div></div>
@@ -564,8 +564,27 @@
   </div>
 </section>
 
-<!-- 10 — [Section] Budget -->
-<section class="slide slide--navy" data-part="budget" data-label="10 — [Section] Budget" data-notes="Section Budget : postes de dépenses, 3 décisions structurantes, scénarios et financements envisagés.">
+<!-- 10 — PCA globale -->
+<section class="slide slide--cream" data-part="contexte" data-label="10 — PCA globale" data-notes="Preuve visuelle : projection PCA de la cohorte pilote (n=75, déjà génotypée) sur l'espace des populations de référence 1000 Genomes. Les échantillons réunionnais se répartissent en continu entre les clusters de référence, hors de tout cluster homogène — la démonstration concrète de la singularité évoquée en slide 3.">
+  <div class="slide-inner">
+    <div class="slide-pad">
+      <div class="slide-header slide-header--split">
+        <div>
+          <span class="slide-eyebrow">Preuve visuelle</span>
+          <h1 class="slide-title">Une diversité génétique continue, hors des références</h1>
+        </div>
+        <div class="text-body">Cohorte pilote projetée sur 1000 Genomes — <strong style="color:var(--coral);">n = 75</strong></div>
+      </div>
+      <div class="pca-wrap">
+        <canvas id="pcaScatterChart" role="img" aria-label="PCA globale : projection de la cohorte pilote réunionnaise (n=75) sur l'espace des composantes principales des populations de référence 1000 Genomes (AFR, AMR, EAS, EUR, SAS). Les échantillons réunionnais se répartissent en continu entre les clusters de référence, hors de tout cluster homogène."></canvas>
+      </div>
+      <p class="text-small pca-caption">Positionnement relatif uniquement : aucune attribution ethnique, preuve d'ascendance locale ou preuve IBD.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 — [Section] Budget -->
+<section class="slide slide--navy" data-part="budget" data-label="11 — [Section] Budget" data-notes="Section Budget : postes de dépenses, 3 décisions structurantes, scénarios et financements envisagés.">
   <div class="slide-inner">
     <div class="section-slide">
       <div class="hero-waves">
@@ -596,8 +615,8 @@
   </div>
 </section>
 
-<!-- 11 — Postes de dépenses -->
-<section class="slide slide--white" data-part="budget" data-label="11 — Postes de dépenses" data-notes="Principal poste : ressources humaines (30%). Suivi de l'infrastructure IT et du génotypage SNP. Le WGS 350 individus est pris en charge par POPgen : 0€ pour le laboratoire.">
+<!-- 12 — Postes de dépenses -->
+<section class="slide slide--white" data-part="budget" data-label="12 — Postes de dépenses" data-notes="Principal poste : ressources humaines (30%). Suivi de l'infrastructure IT et du génotypage SNP. Le WGS 350 individus est pris en charge par POPgen : 0€ pour le laboratoire.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header slide-header--split">
@@ -620,8 +639,8 @@
   </div>
 </section>
 
-<!-- 12 — 3 décisions structurantes -->
-<section class="slide slide--cream" data-part="budget" data-label="12 — 3 décisions structurantes" data-notes="3 décisions clés : génotypage (sous-traitance vs iScan), infrastructure IT (cloud vs on-premise), et proposition RH (stages+CDD vs alternance+CIFRE). La proposition 2 RH est recommandée.">
+<!-- 13 — 3 décisions structurantes -->
+<section class="slide slide--cream" data-part="budget" data-label="13 — 3 décisions structurantes" data-notes="3 décisions clés : génotypage (sous-traitance vs iScan), infrastructure IT (cloud vs on-premise), et proposition RH (stages+CDD vs alternance+CIFRE). La proposition 2 RH est recommandée.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header"><span class="slide-eyebrow">Budget</span><h1 class="slide-title">Les 3 décisions structurantes</h1></div>
@@ -656,8 +675,8 @@
   </div>
 </section>
 
-<!-- 13 — Scénarios et financements -->
-<section class="slide slide--white" data-part="budget" data-label="13 — Scénarios et financements" data-notes="Deux scénarios selon les décisions prises. Financements envisagés : FEDER, PHRC-R, partenariat POPgen, et dotations CHU.">
+<!-- 14 — Scénarios et financements -->
+<section class="slide slide--white" data-part="budget" data-label="14 — Scénarios et financements" data-notes="Deux scénarios selon les décisions prises. Financements envisagés : FEDER, PHRC-R, partenariat POPgen, et dotations CHU.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header"><span class="slide-eyebrow">Budget</span><h1 class="slide-title">Scénarios et financements</h1></div>
@@ -691,8 +710,8 @@
   </div>
 </section>
 
-<!-- 14 — [Section] Systèmes d'information -->
-<section class="slide slide--navy" data-part="si" data-label="14 — [Section] Systèmes d'information" data-notes="Section Systèmes d'Information : infrastructure, stockage, sécurité des données, architecture pipeline et accompagnement DSIO attendu.">
+<!-- 15 — [Section] Systèmes d'information -->
+<section class="slide slide--navy" data-part="si" data-label="15 — [Section] Systèmes d'information" data-notes="Section Systèmes d'Information : infrastructure, stockage, sécurité des données, architecture pipeline et accompagnement DSIO attendu.">
   <div class="slide-inner">
     <div class="section-slide">
       <div class="hero-waves">
@@ -718,8 +737,8 @@
   </div>
 </section>
 
-<!-- 15 — Infrastructure IT -->
-<section class="slide slide--white" data-part="si" data-label="15 — Infrastructure IT" data-notes="Besoins IT significatifs : serveurs HPC, stockage 200+ To, réseau sécurisé, environnement bioinformatique. Deux scénarios : on-premise 334 K€ ou cloud hybride HDS 270 K€.">
+<!-- 16 — Infrastructure IT -->
+<section class="slide slide--white" data-part="si" data-label="16 — Infrastructure IT" data-notes="Besoins IT significatifs : serveurs HPC, stockage 200+ To, réseau sécurisé, environnement bioinformatique. Deux scénarios : on-premise 334 K€ ou cloud hybride HDS 270 K€.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header"><span class="slide-eyebrow">Systèmes d'information</span><h1 class="slide-title">Besoins en infrastructure et équipements</h1></div>
@@ -745,8 +764,8 @@
   </div>
 </section>
 
-<!-- 16 — Sécurité des données -->
-<section class="slide slide--cream" data-part="si" data-label="16 — Sécurité des données" data-notes="Données médicales et génomiques : exigences HDS obligatoires, conformité RGPD, pseudonymisation, chiffrement AES-256, contrôle des accès, plan de continuité.">
+<!-- 17 — Sécurité des données -->
+<section class="slide slide--cream" data-part="si" data-label="17 — Sécurité des données" data-notes="Données médicales et génomiques : exigences HDS obligatoires, conformité RGPD, pseudonymisation, chiffrement AES-256, contrôle des accès, plan de continuité.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header"><span class="slide-eyebrow">Systèmes d'information</span><h1 class="slide-title">Stockage, hébergement et sécurité des données</h1></div>
@@ -783,8 +802,8 @@
   </div>
 </section>
 
-<!-- 17 — Accompagnement DSIO & DRCI -->
-<section class="slide slide--white" data-part="si" data-label="17 — Accompagnement DSIO" data-notes="L'accompagnement DSIO est structurant : mise en place infrastructure, certification HDS, intégration SI CHU (DPI, LDAP, HL7/FHIR), compétences techniques et formation de l'équipe.">
+<!-- 18 — Accompagnement DSIO & DRCI -->
+<section class="slide slide--white" data-part="si" data-label="18 — Accompagnement DSIO" data-notes="L'accompagnement DSIO est structurant : mise en place infrastructure, certification HDS, intégration SI CHU (DPI, LDAP, HL7/FHIR), compétences techniques et formation de l'équipe.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header"><span class="slide-eyebrow">Systèmes d'information</span><h1 class="slide-title">Accompagnement attendu — DSIO &amp; DRCI</h1></div>
@@ -813,8 +832,8 @@
   </div>
 </section>
 
-<!-- 18 — Équipe et prochaines étapes -->
-<section class="slide slide--navy" data-part="si" data-label="18 — Équipe et prochaines étapes" data-notes="Présenter l'équipe et conclure sur les prochaines étapes : tenir la réunion DRCI+DSIO, arbitrage infrastructure, montage FEDER, démarrage phases 0 et 1.">
+<!-- 19 — Équipe et prochaines étapes -->
+<section class="slide slide--navy" data-part="si" data-label="19 — Équipe et prochaines étapes" data-notes="Présenter l'équipe et conclure sur les prochaines étapes : tenir la réunion DRCI+DSIO, arbitrage infrastructure, montage FEDER, démarrage phases 0 et 1.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="team-header">
@@ -863,6 +882,7 @@
 </div>
 
 <script src="js/vendor/chart.umd.js"></script>
+<script src="js/pca-data.js"></script>
 <script src="js/charts.js"></script>
 <script src="js/app.js"></script>
 </body>

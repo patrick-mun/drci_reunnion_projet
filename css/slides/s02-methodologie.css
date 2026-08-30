@@ -1,6 +1,6 @@
-/* Slides 05–09 — Partie 1 (suite) : Démarche scientifique
-   Objectifs · Pipeline méthodologique · Algorithme S_div · Calendrier · Modules IA
-   Familles de classes : kpi-* / pipeline-* (main.css) / algo-* / phase-* (main.css) / module-* (main.css) */
+/* Slides 05–10 — Partie 1 (suite) : Démarche scientifique
+   Objectifs · Pipeline méthodologique · Algorithme S_div · Calendrier · Modules IA · PCA globale
+   Familles de classes : kpi-* / pipeline-* (main.css) / algo-* / phase-* (main.css) / module-* (main.css) / pca-* */
 
 .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; flex: 1; align-items: stretch; }
 .kpi-card {
@@ -37,7 +37,12 @@
 /* Radar de pondération — canvas Chart.js */
 .algo-radar-wrap { flex: 1; position: relative; background: white; border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px; min-height: 0; }
 
+/* PCA globale — canvas Chart.js */
+.pca-wrap { flex: 1; position: relative; background: white; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px 20px; min-height: 0; }
+.pca-caption { color: var(--muted); margin-top: 12px; }
+
 @media (max-width: 900px) {
   .algo-component-grid--2x2 { grid-template-columns: 1fr; grid-template-rows: none; }
   .algo-radar-wrap { flex: none; height: 280px; }
+  .pca-wrap { flex: none; height: 320px; }
 }
