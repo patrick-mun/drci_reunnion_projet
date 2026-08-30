@@ -5,6 +5,7 @@
 .budget-total { text-align: right; flex-shrink: 0; }
 .budget-total-value { font-family: var(--font-title); font-weight: 700; font-size: 36px; color: var(--navy); line-height: 1; }
 .budget-total-label { font-family: var(--font-body); font-size: 18px; color: var(--muted); margin-top: 4px; }
+.budget-total-caveat { font-family: var(--font-body); font-size: 14px; font-style: italic; color: var(--muted); margin-top: 6px; }
 
 .budget-bars { display: flex; flex-direction: column; gap: 14px; flex: 1; justify-content: center; }
 .budget-row { display: flex; align-items: center; gap: 18px; }

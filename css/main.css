@@ -423,6 +423,7 @@ h2.block-title {
 .section-stat-value { font-family: var(--font-title); font-size: 44px; font-weight: 700; color: white; line-height: 1; }
 .section-stat-label { font-family: var(--font-body); font-size: 19px; color: rgba(255, 255, 255, 0.5); margin-top: 6px; }
 .section-stat-sep { width: 1px; background: rgba(255, 255, 255, 0.15); }
+.section-stat-caveat { font-family: var(--font-body); font-size: 15px; font-style: italic; color: rgba(255, 255, 255, 0.5); margin-top: 12px; }
 
 /* Sommaire (table des matières) */
 .toc-row { display: flex; gap: 28px; align-items: stretch; padding: 20px 26px; border-radius: var(--r-lg); border: 1px solid var(--border); background: var(--bg-light); }
