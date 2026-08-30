@@ -1,7 +1,8 @@
 /* charts.js — Génome Réunion · Réunion DRCI/DSIO
    Graphiques Chart.js (vendorisé, pas de CDN) : donut ancestral (slide 3),
    radar des pondérations S_div (slide 9), Gantt du calendrier (slide 10),
-   comparatif budgétaire (slide 15).
+   PCA globale de la cohorte pilote (slide 12, données dans pca-data.js),
+   comparatif budgétaire (slide 16).
    Les slides inactives restent dans le flux (opacity/visibility, pas de
    display:none) : les canvas ont donc une taille dès le chargement et les
    graphiques peuvent être initialisés une seule fois, sans attendre
@@ -165,6 +166,49 @@
         scales: {
           x: { grid: { display: false }, ticks: { font: titleFont(), color: NAVY } },
           y: { beginAtZero: true, title: { display: true, text: '€ (milliers)' }, grid: { color: BORDER } }
+        }
+      }
+    });
+  }
+
+  var pcaCanvas = document.getElementById('pcaScatterChart');
+  if (pcaCanvas && typeof PCA_DATA !== 'undefined') {
+    function pcaToPoints(flat) {
+      var pts = [];
+      for (var i = 0; i < flat.length; i += 2) pts.push({ x: flat[i], y: flat[i + 1] });
+      return pts;
+    }
+    function pcaRefDataset(key, opacity) {
+      var s = PCA_DATA[key];
+      return {
+        label: s.label, data: pcaToPoints(s.flat),
+        backgroundColor: s.color + Math.round(opacity * 255).toString(16).padStart(2, '0'),
+        pointRadius: 2.2, pointHoverRadius: 4
+      };
+    }
+    new Chart(pcaCanvas, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          pcaRefDataset('AFR', 0.35), pcaRefDataset('AMR', 0.35), pcaRefDataset('EAS', 0.35),
+          pcaRefDataset('EUR', 0.35), pcaRefDataset('SAS', 0.35),
+          {
+            label: PCA_DATA.ETUDE.label, data: pcaToPoints(PCA_DATA.ETUDE.flat),
+            backgroundColor: PCA_DATA.ETUDE.color, borderColor: PCA_DATA.ETUDE.color,
+            pointStyle: 'crossRot', pointRadius: 5, pointBorderWidth: 1.5, pointHoverRadius: 7
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'right', labels: { boxWidth: 10, usePointStyle: true, font: { family: "'DM Sans', sans-serif", size: 12 } } },
+          tooltip: { callbacks: { label: function (ctx) { return ctx.dataset.label + ' · PC1=' + ctx.parsed.x.toFixed(1) + ' PC2=' + ctx.parsed.y.toFixed(1); } } }
+        },
+        scales: {
+          x: { title: { display: true, text: 'PC1' }, grid: { color: BORDER } },
+          y: { title: { display: true, text: 'PC2' }, grid: { color: BORDER } }
         }
       }
     });

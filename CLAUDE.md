@@ -2,7 +2,7 @@
 
 ## Vue d'ensemble
 
-Présentation HTML/CSS/JS statique — **21 slides** (0–20), zéro build tool, zéro CDN à l'exécution (hors Google Fonts).
+Présentation HTML/CSS/JS statique — **22 slides** (0–21), zéro build tool, zéro CDN à l'exécution (hors Google Fonts).
 Deck de réunion destiné aux équipes DRCI et DSIO du CHU de La Réunion, structuré en 3 parties : contexte &amp; démarche
 scientifique, budget &amp; financements, systèmes d'information &amp; accompagnement.
 Recréé à partir du prototype de design haute-fidélité `design_handoff_genome_reunion/Genome Reunion Deck.dc.html`
@@ -13,18 +13,19 @@ Règles de travail détaillées dans `AGENTS.md`.
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | Les 21 slides (source unique de vérité) |
+| `index.html` | Les 22 slides (source unique de vérité) |
 | `presenter.html` | Mode présentation deux-écrans : slide courante (iframe, gauche) + notes + aperçu slide suivante (droite), synchro par `postMessage`, fenêtre audience séparée |
 | `css/main.css` | Variables de design, reset, navigation fixe, mécanique du deck (fade + `is-active`), typographie, composants transversaux (card, grid, callout, formule, sommaire, pipeline, timeline, modules, équipe), responsive, menu mobile |
 | `css/presenter.css` | Styles dédiés à `presenter.html` (barre outils, timer, panneaux notes/aperçu, séparateur redimensionnable) |
-| `css/slides/s00-hero.css` | Slides 0–1 — couverture, sommaire ; vagues animées `.hero-waves` (réutilisées par les slides de section 12 &amp; 16) |
+| `css/slides/s00-hero.css` | Slides 0–1 — couverture, sommaire ; vagues animées `.hero-waves` (réutilisées par les slides de section 13 &amp; 17) |
 | `css/slides/s01-contexte.css` | Slides 2–6 — contexte scientifique, singularité réunionnaise, impact clinique VUS, pharmacogénétique, biais IA médicaments |
-| `css/slides/s02-methodologie.css` | Slides 7–11 — objectifs, pipeline méthodologique, algorithme S_div, calendrier, modules IA |
-| `css/slides/s03-budget.css` | Slides 12–15 — section budget, postes de dépenses, 3 décisions structurantes, scénarios &amp; financements |
-| `css/slides/s04-si.css` | Slides 16–19 — section SI, infrastructure IT, sécurité des données, accompagnement DSIO &amp; DRCI |
-| `css/slides/s05-equipe.css` | Slide 20 — équipe et prochaines étapes |
+| `css/slides/s02-methodologie.css` | Slides 7–12 — objectifs, pipeline méthodologique, algorithme S_div, calendrier, modules IA, PCA globale |
+| `css/slides/s03-budget.css` | Slides 13–16 — section budget, postes de dépenses, 3 décisions structurantes, scénarios &amp; financements |
+| `css/slides/s04-si.css` | Slides 17–20 — section SI, infrastructure IT, sécurité des données, accompagnement DSIO &amp; DRCI |
+| `css/slides/s05-equipe.css` | Slide 21 — équipe et prochaines étapes |
 | `js/app.js` | Navigation (clavier, tactile, boutons), barre de progression, compteur, pastilles de section actives, menu burger mobile, synchro `postMessage` avec `presenter.html` |
-| `js/charts.js` | Initialisation des 4 graphiques Chart.js (donut ancestral slide 3, radar S_div slide 9, Gantt calendrier slide 10, comparatif budgétaire slide 15) |
+| `js/charts.js` | Initialisation des 5 graphiques Chart.js (donut ancestral slide 3, radar S_div slide 9, Gantt calendrier slide 10, PCA globale slide 12, comparatif budgétaire slide 16) |
+| `js/pca-data.js` | Coordonnées PC1/PC2 réelles du graphique PCA globale (slide 12), extraites du SVG source `patrick-mun/DOCK6_report1` |
 | `js/vendor/chart.umd.js` | Chart.js 4.4.6 vendorisé (build UMD, récupéré via `npm pack`, pas de CDN) |
 | `assets/logo.svg` / `assets/logo-white.svg` | Logo Génome Réunion (variante navy pour fonds clairs / variante blanche pour fonds navy·teal) |
 | `assets/favicon.svg` | Favicon |
@@ -49,15 +50,16 @@ Règles de travail détaillées dans `AGENTS.md`.
 | 9 | Algorithme S_div | 1 · Contexte | `slide--cream` | Formule + 4 composantes pondérées + **radar Chart.js** `#sdivRadarChart` |
 | 10 | Calendrier 7 phases | 1 · Contexte | `slide--white` | **Gantt Chart.js** `#calendarGanttChart` (7 phases sur 36 mois) + jalons |
 | 11 | Modules IA | 1 · Contexte | `slide--white` | Grid 2×2 des 4 modules cliniques |
-| 12 | [Section] Budget | 2 · Budget | `slide--navy` | Slide intercalaire, 2 scénarios chiffrés |
-| 13 | Postes de dépenses | 2 · Budget | `slide--white` | Barres horizontales, total 1 709 000 € |
-| 14 | 3 décisions structurantes | 2 · Budget | `slide--cream` | Génotypage / infrastructure / RH |
-| 15 | Scénarios et financements | 2 · Budget | `slide--white` | Optimal vs Maximal, **barres groupées Chart.js** `#scenarioChart` + 4 sources de financement |
-| 16 | [Section] Systèmes d'information | 3 · SI | `slide--navy` | Slide intercalaire |
-| 17 | Infrastructure IT | 3 · SI | `slide--white` | Calcul &amp; stockage / réseau &amp; logiciels |
-| 18 | Sécurité des données | 3 · SI | `slide--cream` | 3 piliers : hébergement, sécurité, gouvernance |
-| 19 | Accompagnement DSIO &amp; DRCI | 3 · SI | `slide--white` | 2 colonnes de besoins/accompagnement |
-| 20 | Équipe et prochaines étapes | 3 · SI | `slide--navy` | Équipe porteuse, partenaires, 4 prochaines étapes |
+| 12 | PCA globale | 1 · Contexte | `slide--cream` | Preuve visuelle, cohorte pilote (n=75) vs 1000 Genomes, **scatter Chart.js** `#pcaScatterChart` |
+| 13 | [Section] Budget | 2 · Budget | `slide--navy` | Slide intercalaire, 2 scénarios chiffrés |
+| 14 | Postes de dépenses | 2 · Budget | `slide--white` | Barres horizontales, total 1 709 000 € |
+| 15 | 3 décisions structurantes | 2 · Budget | `slide--cream` | Génotypage / infrastructure / RH |
+| 16 | Scénarios et financements | 2 · Budget | `slide--white` | Optimal vs Maximal, **barres groupées Chart.js** `#scenarioChart` + 4 sources de financement |
+| 17 | [Section] Systèmes d'information | 3 · SI | `slide--navy` | Slide intercalaire |
+| 18 | Infrastructure IT | 3 · SI | `slide--white` | Calcul &amp; stockage / réseau &amp; logiciels |
+| 19 | Sécurité des données | 3 · SI | `slide--cream` | 3 piliers : hébergement, sécurité, gouvernance |
+| 20 | Accompagnement DSIO &amp; DRCI | 3 · SI | `slide--white` | 2 colonnes de besoins/accompagnement |
+| 21 | Équipe et prochaines étapes | 3 · SI | `slide--navy` | Équipe porteuse, partenaires, 4 prochaines étapes |
 
 ### Pastilles de navigation → slides d'entrée de partie
 
@@ -65,8 +67,8 @@ Règles de travail détaillées dans `AGENTS.md`.
 |---|---|---|
 | Accueil | 0 | 0 — Couverture |
 | 01 · Contexte scientifique | 2 | 2 — Contexte scientifique |
-| 02 · Budget | 12 | 12 — [Section] Budget |
-| 03 · Systèmes d'information | 16 | 16 — [Section] Systèmes d'information |
+| 02 · Budget | 13 | 13 — [Section] Budget |
+| 03 · Systèmes d'information | 17 | 17 — [Section] Systèmes d'information |
 
 `data-part` sur chaque `<section>` (`hero` / `contexte` / `budget` / `si`) pilote la mise en évidence de la
 pastille active dans `js/app.js` (`updatePills()`).
@@ -75,10 +77,10 @@ pastille active dans `js/app.js` (`updatePills()`).
 
 | ID | Rôle |
 |---|---|
-| `#deck` | Conteneur des 21 slides |
+| `#deck` | Conteneur des 22 slides |
 | `#deck-viewport` | Zone visible sous la nav + barre de progression |
 | `#bp` / `#bn` | Boutons Précédent / Suivant |
-| `#ctr` | Compteur « N / 21 » (`aria-live`) |
+| `#ctr` | Compteur « N / 22 » (`aria-live`) |
 | `#pf` | Barre de progression (largeur %) |
 | `#nav-logo` | Logo nav, clic/`Enter` → retour slide 0 |
 | `#burger` / `#mobile-menu` | Menu mobile (&lt; 900 px) |
@@ -109,13 +111,15 @@ programmatique (utilisé potentiellement par `presenter.html` si l'accès direct
 | `#ancestryChart` | 3 — La singularité réunionnaise | donut | Composition ancestrale illustrative (45/25/15/8/7 %) |
 | `#sdivRadarChart` | 9 — Algorithme S_div | radar | Pondération des 4 composantes (0,30/0,30/0,25/0,15) |
 | `#calendarGanttChart` | 10 — Calendrier 7 phases | Gantt (barres flottantes horizontales) | 7 phases sur 36 mois, plugin maison `ganttRangeLabels` pour l'étiquette « M{début}–M{fin} » |
-| `#scenarioChart` | 15 — Scénarios et financements | barres groupées | Génotypage / Infrastructure IT / RH — Optimal vs Maximal |
+| `#pcaScatterChart` | 12 — PCA globale | scatter (nuage de points) | Projection PCA de la cohorte pilote (n=75) sur 5 populations de référence 1000 Genomes (AFR/AMR/EAS/EUR/SAS, 2 504 points) — coordonnées réelles extraites du SVG source, voir `js/pca-data.js` |
+| `#scenarioChart` | 16 — Scénarios et financements | barres groupées | Génotypage / Infrastructure IT / RH — Optimal vs Maximal |
 
-`js/charts.js` initialise les 4 graphiques une seule fois au chargement de `index.html` : les slides inactives
+`js/charts.js` initialise les 5 graphiques une seule fois au chargement de `index.html` : les slides inactives
 restent dans le flux (`opacity`/`visibility`, jamais `display:none`), donc chaque `<canvas>` a déjà une taille
 exploitable dès `DOMContentLoaded`, sans attendre l'activation de sa slide. Aucune donnée n'est dupliquée par
-rapport aux slides textuelles (12, 13) — les graphiques resynthétisent des chiffres déjà présentés ailleurs
-dans le deck.
+rapport aux slides textuelles (13, 14) — les graphiques resynthétisent des chiffres déjà présentés ailleurs
+dans le deck. Exception : `#pcaScatterChart` introduit une donnée nouvelle (coordonnées PCA réelles d'une
+cohorte pilote), non présentée textuellement ailleurs dans le deck — voir `js/pca-data.js` pour la provenance.
 
 ## Conventions de nommage CSS
 
@@ -123,7 +127,7 @@ dans le deck.
 |---|---|---|
 | Hero / Sommaire | `hero-*` / `toc-*` / `wave-row` · `wave-1/2/3` (vagues animées `@keyframes wave-pan`) | s00-hero.css / main.css |
 | Contexte scientifique | `bias-*` / `singularity-*` / `ancestry-*` / `clinical-*` / `pharma-*` / `ai-*` | s01-contexte.css |
-| Méthodologie | `kpi-*` / `pipeline-*` / `algo-*` / `phase-*` / `module-*` | s02-methodologie.css + main.css |
+| Méthodologie | `kpi-*` / `pipeline-*` / `algo-*` / `phase-*` / `module-*` / `pca-*` | s02-methodologie.css + main.css |
 | Budget | `budget-*` / `decision-*` / `scenario-*` / `funding-*` | s03-budget.css |
 | Systèmes d'information | `infra-*` / `security-*` / `support-*` | s04-si.css |
 | Équipe | `team-*` / `partners-*` / `step-item-*` | s05-equipe.css + main.css |
@@ -149,7 +153,7 @@ dans le deck.
 > **Après toute modification qui change l'un des éléments ci-dessous, mettre à jour
 > la section correspondante de ce fichier ET du git commit :**
 >
-> - Modification du nombre de slides → « **21 slides** » en vue d'ensemble + tableau « Carte des slides »
+> - Modification du nombre de slides → « **22 slides** » en vue d'ensemble + tableau « Carte des slides »
 > - Ajout / suppression / déplacement d'une slide → tableau « Carte des slides » + tableau `NOTES` de `presenter.html`
 > - Ajout d'une classe CSS → tableau « Conventions de nommage CSS »
 > - Nouvel ID DOM utilisé par `js/app.js` → tableau « IDs DOM »

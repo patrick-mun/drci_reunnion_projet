@@ -13,7 +13,7 @@ population réunionnaise, porté par le CHU de La Réunion — préparée pour u
 équipes DRCI (Direction de la Recherche Clinique et de l'Innovation) et DSIO (Direction des Systèmes
 d'Information et de l'Organisation) du CHU.
 
-21 slides, zéro build tool, zéro CDN à l'exécution (hors Google Fonts). Ouvrable directement dans un
+22 slides, zéro build tool, zéro CDN à l'exécution (hors Google Fonts). Ouvrable directement dans un
 navigateur, sans serveur ni compilation.
 
 ## Aperçu rapide
@@ -28,14 +28,14 @@ Le fichier peut aussi être ouvert directement en double-cliquant sur `index.htm
 serveur local est recommandé pour un rendu et une synchro presenter/audience fiables sur tous les
 navigateurs.
 
-## Structure du deck — 21 slides
+## Structure du deck — 22 slides
 
 | Partie | Slides | Contenu |
 |---|---|---|
 | Couverture &amp; sommaire | 1–2 | Titre, équipe, déroulé de la réunion |
-| 1 · Contexte &amp; démarche scientifique | 3–11 | Angle mort de la médecine de précision, singularité génétique réunionnaise, impact clinique, pharmacogénétique, biais IA, objectifs, pipeline, algorithme S_div, calendrier, modules IA |
-| 2 · Budget &amp; financements | 12–15 | Postes de dépenses, 3 décisions structurantes, scénarios et financements (FEDER, PHRC-R, POPgen) |
-| 3 · Systèmes d'information &amp; accompagnement | 16–20 | Infrastructure IT, sécurité des données, accompagnement DSIO &amp; DRCI, équipe et prochaines étapes |
+| 1 · Contexte &amp; démarche scientifique | 3–13 | Angle mort de la médecine de précision, singularité génétique réunionnaise, impact clinique, pharmacogénétique, biais IA, objectifs, pipeline, algorithme S_div, calendrier, modules IA, PCA globale (preuve visuelle) |
+| 2 · Budget &amp; financements | 14–17 | Postes de dépenses, 3 décisions structurantes, scénarios et financements (FEDER, PHRC-R, POPgen) |
+| 3 · Systèmes d'information &amp; accompagnement | 18–22 | Infrastructure IT, sécurité des données, accompagnement DSIO &amp; DRCI, équipe et prochaines étapes |
 
 La partie 1 s'adresse à l'ensemble des participants ; les parties 2 et 3 impliquent plus particulièrement
 la DRCI et la DSIO.
@@ -72,7 +72,7 @@ généré avec Claude Design) :
 
 | Fichier / dossier | Rôle |
 |---|---|
-| `index.html` | Le deck complet (21 slides) |
+| `index.html` | Le deck complet (22 slides) |
 | `presenter.html` | Mode présentation deux-écrans |
 | `css/main.css` | Design system, navigation, mécanique du deck, composants transversaux |
 | `css/presenter.css` | Styles du mode présentation |
